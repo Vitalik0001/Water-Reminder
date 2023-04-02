@@ -1,7 +1,7 @@
 import styles from "./index.module.css";
 
-const Water = () => {
+const Main = () => {
 
 }
 
-export default Water;
+export default Main;
