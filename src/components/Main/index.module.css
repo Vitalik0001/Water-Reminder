@@ -1,0 +1,248 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+body{
+  /* background-color: #FF6969; */
+  background-color: #F2ECDB;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.wrapper{
+  max-width: 1440px;
+  height: 770px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 60px 70px 80px rgba(28, 31, 46, 0.1);
+  border-radius: 24px; 
+  display: flex;
+  
+}
+.navBody{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  
+  
+  max-width: 247px;
+  padding: 40px;
+  height: 100%;
+  border-right: 1px solid  #EFECEC;
+
+  background-color: #fff;
+  border-radius: 24px 0 0 24px; 
+}
+.logo{
+  margin-bottom: 100px;
+}
+.menuNav{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 14px;
+line-height: 21px;
+/* identical to box height */
+
+
+color: #838383;
+  
+}
+.menu{
+  user-select: none;
+}
+.menuWord{
+  font-size: 14px;
+line-height: 21px;
+margin-bottom: 24px;
+/* identical to box height */
+
+
+color: #3629B7;
+
+}
+.user{
+  display: flex;
+  color: #494949;
+  gap: 8px;
+  margin-top: auto;
+}
+.userImg{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+.userMailName{
+  font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+}
+.userMail{
+  font-size: 12px;
+line-height: 18px;
+
+
+
+
+}
+
+.center{
+max-width: 860px;
+padding: 40px;
+}
+.greeting{
+  color: #3629B7;
+  font-family: 'Poppins';
+
+font-weight: 400;
+font-size: 24px;
+line-height: 28px;
+margin-bottom: 40px;
+}
+
+
+.userName{
+  font-weight: 700;
+}
+.currentChosenMenuLink{
+  width: 100%;
+
+}
+.intakes{
+  display: flex;
+  gap: 24px;
+}
+
+.tipsBoard{
+  max-width: 779px;
+  
+  background-color: #FFFFFF;
+  border: 1px solid #F2EEEE;
+box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02), 0px 12.16px 8.576px rgba(0, 0, 0, 0.013152), 0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+border-radius: 20px;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+/* identical to box height */
+
+display: flex;
+align-items: left;
+flex-direction: column;
+color: #494949;
+padding: 24px;
+margin-top: auto;
+
+
+
+
+}
+.subtitleTip{
+  font-size: 13px;
+line-height: 20px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+
+color: #8E8F8F;
+margin-top: 4px;
+margin-bottom: 16px;
+}
+.tipsRow{
+  display: flex;
+  gap: 24px;
+}
+
+.rightColumn{
+  flex: 1;
+  border-left: 1px solid  #EFECEC;
+  height: 100%;
+  max-width: 332px;
+  padding: 40px 30px;
+}
+.currentDay{
+  font-size: 18px;
+line-height: 28px;
+/* identical to box height, or 156% */
+
+text-align: right;
+
+/* Primary / 1 */
+
+color: #3629B7;
+margin-bottom: 87px;
+display: flex;
+align-items: center;
+gap: 11px;
+
+max-width: 180px;
+margin-left: auto;
+
+
+}
+.bottle{
+  position: relative;
+  background: #1573FF;
+border-radius: 24.7306px;
+font-size: 20px;
+line-height: 30px;
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+max-width: 260px;
+padding: 53px 20px 41px 20px;
+margin-bottom: 30px;
+
+}
+.bottleImg{
+  position: absolute;
+  top: -100px;
+  left: 30px;
+}
+.bottlePhrase{
+  max-width: 93px;
+  margin-left: auto;
+}
+.intakeGoal{
+  background: #3546B1;
+border-radius: 12px;
+  max-width: 260px;
+  padding: 24px ;
+  
+  
+  color: #F2F4F7;
+  
+}
+.waterMl{
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height */
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.drinkLog{
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+  
+  text-align: center;
+  
+  color: #3629B7;
+  background: #F7F9FD;
+border-radius: 12px;
+padding: 24px;
+text-align: left;
+
+display: flex;
+flex-direction: column;
+gap: 8px;
+margin-top: 32px;
+}
