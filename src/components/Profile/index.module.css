@@ -1,0 +1,147 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.data {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 45px;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.human {
+  border-radius: 50%;
+}
+
+.change {
+  position: absolute;
+  width: 25px;
+  right: 1px;
+  bottom: 20px;
+}
+
+.user {
+  width: 400px;
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.weight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.height {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputNumber {
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 500;
+  font-size: 14px;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 15px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  outline: none;
+  background-color: rgb(245, 245, 245);
+}
+
+.inputNumber:focus {
+  border-bottom: 1px solid #01ddff;
+  -webkit-transition: 0.1s;
+  transition: 0.5s;
+}
+
+.inputName {
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 500;
+  font-size: 14px;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  outline: none;
+  background-color: rgb(245, 245, 245);
+}
+
+.inputName:focus {
+  border-bottom: 1px solid #01ddff;
+  -webkit-transition: 0.1s;
+  transition: 0.5s;
+}
+
+.nextButton {
+  align-items: center;
+  background-color:  #FF6969;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  min-height: 3rem;
+  padding: 10px 40px;
+  margin-top: 70px;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.nextButton:hover,
+.nextButton:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: white;
+}
+
+.nextButton:hover {
+  transform: translateY(-1px);
+}
+
+.nextButton:active {
+  background-color: #fc5252;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: white;
+  transform: translateY(0);
+}
