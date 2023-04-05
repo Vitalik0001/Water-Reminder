@@ -1,0 +1,275 @@
+@import "../../assets/styles/main.scss";
+@import "./media.scss";
+
+.body {
+  background-color: #f2ecdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  height: 820px;
+  margin: 0 auto;
+  background: $white;
+  box-shadow: 60px 70px 80px rgba(28, 31, 46, 0.1);
+  border-radius: 24px;
+  display: flex;
+}
+
+.navBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  max-width: 300px;
+  padding: 40px;
+  height: 100%;
+  border-right: 1px solid #efecec;
+  background-color: $white;
+  border-radius: 24px 0 0 24px;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: #1573ff;
+  line-height: 25px;
+  font-size: 20px;
+  margin-bottom: 100px;
+  & img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.dashboard {
+  display: flex;
+  align-items: center;
+  & img {
+    width: 25px;
+    margin-left: 15px;
+    margin-right: 20px;
+  }
+}
+
+.foodCalories {
+  display: flex;
+  align-items: center;
+  & img {
+    width: 25px;
+    margin-left: 15px;
+    margin-right: 20px;
+  }
+}
+
+.water {
+  display: flex;
+  align-items: center;
+  & img {
+    width: 25px;
+    margin-left: 15px;
+    margin-right: 20px;
+  }
+}
+
+.menuNav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 14px;
+  line-height: 21px;
+  color: $gray;
+}
+
+.menu {
+  user-select: none;
+}
+
+.menuWord {
+  font-size: 25px;
+  line-height: 21px;
+  margin-bottom: 40px;
+  color: $darkPurple;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  color: $darkGray;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.userImg {
+  width: 38px;
+  border-radius: 50%;
+}
+
+.userMailName {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+  margin-left: 10px;
+  & img {
+    width: 25px;
+    padding-top: 6px;
+  }
+}
+
+.center {
+  max-width: 1000px;
+  padding: 40px 80px;
+}
+
+.greeting {
+  color: $darkPurple;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 40px;
+}
+
+.userName {
+  font-weight: 700;
+}
+
+.currentChosenMenuLink {
+  width: 100%;
+}
+
+.weather {
+  width: 779px;
+  height: 100px;
+  background-color: #F7F9FD;
+  border-radius: 12px;
+  margin-top: 80px;
+  margin-bottom: 45px;
+}
+
+.intakes {
+  display: flex;
+  gap: 24px;
+}
+
+.tipsBoard {
+  max-width: 779px;
+  background-color: $white;
+  border: 1px solid #f2eeee;
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  color: $darkGray;
+  padding: 24px;
+}
+
+.subtitleTip {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  color: #8e8f8f;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.tipsRow {
+  display: flex;
+  gap: 24px;
+}
+
+.rightColumn {
+  flex: 1;
+  border-left: 1px solid $veryLightGray;
+  height: 100%;
+  max-width: 350px;
+  padding: 40px;
+}
+
+.currentDay {
+  font-size: 18px;
+  line-height: 28px;
+  text-align: right;
+  color: $darkPurple;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  max-width: 180px;
+  margin-left: auto;
+}
+
+.bottle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  line-height: 30px;
+  color: $white;
+  margin-bottom: 20px;
+}
+
+.bottleImgBg {
+  max-width: 220px;
+}
+
+.bottleImg {
+  position: absolute;
+  max-height: 185px;
+  top: -20px;
+  left: 50px;
+}
+
+.bottlePhrase {
+  max-width: 93px;
+  position: absolute;
+  right: 5px;
+  top: 30px;
+}
+
+.intakeGoal {
+  background: url("../../assets/img/main/intake-goal.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 260px;
+  padding: 24px;
+  color: #f2f4f7;
+}
+
+.waterMl {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.drinkLog {
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+  color: $darkPurple;
+  background: #f7f9fd;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 30px;
+}

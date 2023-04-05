@@ -1,13 +1,14 @@
-import styles from "./index.module.css";
-import human from '../../img/7312343.jpg'
-import change from "../../img/change.png";
+import styles from "./index.module.scss";
+
+import human from '../../assets/img/profile/7312343.jpg'
+import change from "../../assets/img/profile/change.png";
 
 const Profile = () => {
   return (
     <div className={styles.data}>
       <div className={styles.logo}>
         <img alt="logo" src={human} className={styles.human}/>
-        <a href="#"><img alt="change" src={change} className={styles.change} /></a>
+        <a href="/"><img alt="change" src={change} className={styles.change} /></a>
       </div>
       <h2 className={styles.title}>Username</h2>
       <div className={styles.user}>
@@ -45,7 +46,9 @@ const Profile = () => {
           />
         </div>
       </div>
-      <a className={styles.nextButton} href="#">Next</a>
+      <div className={styles.nextButton}>
+        <a href="/">Next</a>
+      </div>
     </div>  
   )
 }
