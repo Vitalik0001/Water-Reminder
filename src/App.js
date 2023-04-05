@@ -1,6 +1,6 @@
-import Start from "./components/Start/index.js";
-import Profile from "./components/Profile/index.js";
-import Main from "./components/Main/index.js";
+import Start from "./components/Start/index.jsx";
+import Profile from "./components/Profile/index.jsx";
+import Main from "./components/Main/index.jsx";
 
 export default function App() {
   return (

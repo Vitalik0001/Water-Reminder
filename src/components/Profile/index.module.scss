@@ -1,3 +1,6 @@
+@import "../../assets/styles/main.scss";
+@import "./media.scss";
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -74,15 +77,14 @@ input[type=number] {
   padding-left: 10px;
   padding-right: 15px;
   border: none;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid $veryLightGray;
   outline: none;
   background-color: rgb(245, 245, 245);
-}
-
-.inputNumber:focus {
-  border-bottom: 1px solid #01ddff;
-  -webkit-transition: 0.1s;
-  transition: 0.5s;
+  &:focus {
+    border-bottom: 1px solid #01ddff;
+    -webkit-transition: 0.1s;
+    transition: 0.5s;
+  }
 }
 
 .inputName {
@@ -93,24 +95,23 @@ input[type=number] {
   border-radius: 10px;
   padding-left: 10px;
   border: none;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid $veryLightGray;
   outline: none;
   background-color: rgb(245, 245, 245);
-}
-
-.inputName:focus {
-  border-bottom: 1px solid #01ddff;
-  -webkit-transition: 0.1s;
-  transition: 0.5s;
+  &:focus {
+    border-bottom: 1px solid #01ddff;
+    -webkit-transition: 0.1s;
+    transition: 0.5s;
+  }
 }
 
 .nextButton {
   align-items: center;
-  background-color:  #FF6969;
+  background-color:  $red;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-  color: white;
+  color: $white;
   cursor: pointer;
   display: inline-flex;
   font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -125,23 +126,20 @@ input[type=number] {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-}
-
-.nextButton:hover,
-.nextButton:focus {
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  color: white;
-}
-
-.nextButton:hover {
-  transform: translateY(-1px);
-}
-
-.nextButton:active {
-  background-color: #fc5252;
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-  color: white;
-  transform: translateY(0);
+  &:hover,
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: $white;
+  }
+  &:hover {
+    transform: translateY(-1px);
+  }
+  &:active {
+    background-color: $red;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: $white;
+    transform: translateY(0);
+  }
 }
