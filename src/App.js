@@ -8,8 +8,6 @@ export default function App() {
       <Start />
       <Profile />
       <Main 
-        typeOfTip='Hydration'
-        subtitleTip='Consuming fruit juices keeps up the hydration level.'
         userName='ViMADI'
       />
     </>
