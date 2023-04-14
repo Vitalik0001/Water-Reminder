@@ -5,10 +5,16 @@ const Tip = ({ numberElement, tipName, tipText, src }) => {
   let backgroundColor = "";
 
   number === "1"
-    ? (backgroundColor = "#EDFFEF")
-    : number === "2"
-    ? (backgroundColor = "#FFF2EC")
-    : (backgroundColor = "#F4F2FF");
+  ? (backgroundColor = "#EDFFEF")
+  : number === "2"
+  ? (backgroundColor = "#FFF2EC")
+  : number === "3"
+  ? (backgroundColor = "#EDFFEF")
+  : number === "4"
+  ? (backgroundColor = "#FFF2EC")
+  : number === "5"
+  ? (backgroundColor = "#EDFFEF")
+  : (backgroundColor = "#F4F2FF");
 
   return (
     <div

@@ -1,0 +1,155 @@
+@import "../../../assets/styles/main.scss"; 
+
+.calculateCalories {
+  width: 420px;
+  height: 200px;
+  background-color: $white;
+  color: $black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  border: 1px solid #f2eeee;
+  border-radius: 12px;
+  margin-top: 75px;
+  margin-left: 80px;
+  padding: 30px;
+}
+
+.dailyCaloriesTitle{
+  font-weight: 400;
+  & span {
+    font-weight: 700;
+  } 
+}
+
+.dailyCaloriesSubtitle {
+  max-width: 350px;
+  font-size: 10px;
+  margin-left: 10px;
+  & span {
+    font-weight: 600;
+  } 
+}
+
+.burgerGroup{
+  display: flex;
+}
+
+.foodBurger {
+  width: 280px;
+  display: inline-block;
+  margin-top: 70px;
+}
+
+.tipsCalories{
+  width: 779px;
+  background-color: $white;
+  border: 1px solid #f2eeee;
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  color: $darkGray;
+  padding: 24px;
+  margin-top: 65px;
+  & p {
+    color: $black;
+  }
+}
+
+.subtitleTip {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  color: black;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.colariesCalucalate {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.formControl {
+  max-width: 70px;
+  padding: 15px 5px 15px 25px;
+}
+
+.outlinePrimaryInc {
+  padding: 15px 15px 15px 25px;
+  border-radius: 45px 0 0 45px;
+  background-color: white;
+}
+
+.outlinePrimaryDec {
+  padding: 15px 25px 15px 15px;
+  border-radius: 0 45px 45px 0;
+  background-color: white;
+}
+
+.inputCalories {
+  font-weight: 500;
+  font-size: 14px;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  outline: none;
+  margin-top: 20px;
+}
+
+.inputCalories:focus {
+  border-bottom: 1px solid #01ddff;
+  -webkit-transition: 0.1s;
+  transition: 0.5s;
+}
+
+.buttonSubmit {
+  max-height: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid rgb(209,213,219);
+  border-radius: .5rem;
+  color: #111827;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  vertical-align: middle;
+  padding: 9px 20px 12px 20px;
+  margin-left: 25px;
+  text-align: center;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.buttonSubmit:hover {
+  background-color: #f9fafb;
+}
+
+.buttonSubmit:focus-visible {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+

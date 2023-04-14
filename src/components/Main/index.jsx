@@ -1,7 +1,7 @@
 import styles from "./index.module.scss";
 import { Routes, Route, Link } from "react-router-dom";
 import Dashboard from "./Dashboard/index";
-import Food from "./Food/index";
+import FoodCalories from "./Food/index";
 import Water from "./Water/index";
 import WaterLog from "./WaterLog/index";
 
@@ -16,8 +16,6 @@ import calendar from "../../assets/img/main/calendar.svg";
 import bottle from "../../assets/img/main/water-bottle.svg";
 import bottleBackground from "../../assets/img/main/water-bottle-bg.svg";
 
-
-
 const Main = ({ userName, humanImg }) => {
   const calendarDataMain = () => {
     const calendarDay = new Date().toDateString().slice(0, 3);
@@ -27,7 +25,9 @@ const Main = ({ userName, humanImg }) => {
     const result = `${calendarDay}, ${calendarDate} ${calendarMonth} ${calendarYear}`;
     return result;
   }
-  
+
+
+
   return (
     <div className={styles.body}>
       <div className={styles.wrapper}>
@@ -78,7 +78,10 @@ const Main = ({ userName, humanImg }) => {
                 />} 
               />
               <Route path="foodCalories" element={            
-                <Food />} 
+                <FoodCalories
+                  typeOfTip='Dietary'
+                  subtitleTip='Healthy food keeps our body in good shape and improves physical condition.'
+                />} 
               />
               <Route path="water" element={            
                 <Water />} 
