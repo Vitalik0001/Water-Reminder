@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import Dashboard from "./Dashboard/index";
+import FoodCalories from "./Food/index";
 import WaterLog from "./WaterLog/index";
 
 // imgs
@@ -16,7 +17,18 @@ import bottleBackground from "../../assets/img/main/water-bottle-bg.svg";
 
 
 
-const Main = ({ typeOfTip, subtitleTip, userName }) => {
+const Main = ({ userName }) => {
+  
+  const calendarDataMain = () => {
+    const calendarDay = new Date().toDateString().slice(0, 3);
+    const calendarDate = new Date().getDate();
+    const calendarMonth = new Date().toDateString().slice(3, 7);
+    const calendarYear = new Date().getFullYear();
+    const result = `${calendarDay}, ${calendarDate} ${calendarMonth} ${calendarYear}`;
+
+    return result;
+  }
+
   return (
     <div className={styles.body}>
       <div className={styles.wrapper}>
@@ -60,16 +72,20 @@ const Main = ({ typeOfTip, subtitleTip, userName }) => {
             </div>
           </div>
           <div>
-            <Dashboard 
+            {/* <Dashboard 
               typeOfTip='Hydration'
               subtitleTip='Consuming fruit juices keeps up the hydration level.'
+            /> */}
+            <FoodCalories 
+              typeOfTip='Dietary'
+              subtitleTip='Healthy food keeps our body in good shape and improves physical condition.'
             />
           </div>
         </div>
         <div className={styles.rightColumn}>
           <div className={styles.currentDay}>
             <img alt="calendar" src={calendar} />
-            Tue, 24 Nov 2021
+            <p>{calendarDataMain()}</p>
           </div>
           <div className={styles.bottle}>
             <img src={bottle} alt="bottle" className={styles.bottleImg} />
