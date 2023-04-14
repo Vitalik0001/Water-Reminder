@@ -33,13 +33,13 @@ const Dashboard = ({ typeOfTip, subtitleTip }) => {
             src={watermelon}
           />
           <Tip
-            number="2"
+            numberElement="2"
             tipName="Oranges"
             tipText="It contains 72% water in it. It’s tangy nature helps with skin care."
             src={oranges}
           />
           <Tip
-            number="3"
+            numberElement="3"
             tipName="Grapes"
             tipText="It contains vitamin ‘C’ which helps with retaining water."
             src={grapes}
