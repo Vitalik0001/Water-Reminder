@@ -16,7 +16,7 @@ import calendar from "../../assets/img/main/calendar.svg";
 import bottle from "../../assets/img/main/water-bottle.svg";
 import bottleBackground from "../../assets/img/main/water-bottle-bg.svg";
 
-const Main = ({ userName, humanImg }) => {
+const Main = ({ userName, humanImg, calculateCalories, calculateWater, dailyIntakeWater, averageWaterIntake }) => {
   const calendarDataMain = () => {
     const calendarDay = new Date().toDateString().slice(0, 3);
     const calendarDate = new Date().getDate();
@@ -25,8 +25,6 @@ const Main = ({ userName, humanImg }) => {
     const result = `${calendarDay}, ${calendarDate} ${calendarMonth} ${calendarYear}`;
     return result;
   }
-
-
 
   return (
     <div className={styles.body}>
@@ -41,15 +39,15 @@ const Main = ({ userName, humanImg }) => {
             <nav className={styles.menuNav}>
               <div className={styles.dashboard}>
                 <img alt="dashboard" src={dashboard} />
-                <Link to="/profile/main/dashboard">Dashboard</Link>
+                <Link to="/main/dashboard">Dashboard</Link>
               </div>
               <div className={styles.foodCalories}>
                 <img alt="burger" src={burger} />
-                <Link to="/profile/main/foodCalories">Food Calories</Link>
+                <Link to="/main/foodCalories">Food Calories</Link>
               </div>
               <div className={styles.water}>
                 <img alt="water" src={waterDrop} />
-                <Link to="/profile/main/water">Water</Link>
+                <Link to="/main/water">Water</Link>
               </div>
             </nav>
           </div>
@@ -75,12 +73,16 @@ const Main = ({ userName, humanImg }) => {
                 <Dashboard 
                   typeOfTip='Hydration'
                   subtitleTip='Consuming fruit juices keeps up the hydration level.'
+                  calculateWater={calculateWater}
+                  dailyIntakeWater={dailyIntakeWater}
+                  averageWaterIntake={averageWaterIntake}
                 />} 
               />
               <Route path="foodCalories" element={            
                 <FoodCalories
                   typeOfTip='Dietary'
                   subtitleTip='Healthy food keeps our body in good shape and improves physical condition.'
+                  calculateCalories={calculateCalories}
                 />} 
               />
               <Route path="water" element={            
@@ -101,7 +103,7 @@ const Main = ({ userName, humanImg }) => {
           </div>
           <div className={styles.intakeGoal}>
             Intake Goal
-            <span className={styles.waterMl}>18000 ml / 25000 ml</span>
+            <span className={styles.waterMl}>0 ml / {calculateWater()} ml</span>
           </div>
           <div className={styles.drinkLog}>
             Drink log
