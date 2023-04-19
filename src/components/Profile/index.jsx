@@ -2,7 +2,7 @@ import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
 import React from "react";
 
-const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg }) => {
+const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg, calculateCalories }) => {
   const isEmpty = () => {
     const dataInput = Object.values(formData);
     if (dataInput.includes("")) {
@@ -114,7 +114,7 @@ const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg }) =>
         </div>
       </div>
       { isEmpty() && <div className={styles.nextButton}>
-        <Link to="/profile/main/dashboard">Next</Link> 
+        <Link to="/main/dashboard" onClick={calculateCalories}>Next</Link> 
       </div> }
     </div>  
   )

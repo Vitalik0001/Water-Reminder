@@ -11,14 +11,14 @@ import watermelon from "../../../assets/img/main/watermelon.svg";
 import oranges from "../../../assets/img/main/oranges.svg";
 import grapes from "../../../assets/img/main/grapes.svg";
 
-const Dashboard = ({ typeOfTip, subtitleTip }) => {
+const Dashboard = ({ typeOfTip, subtitleTip, calculateWater, dailyIntakeWater, averageWaterIntake }) => {
   return (
     <div>
       <div className={styles.weather}></div>
       <div className={styles.intakes}>
-        <Intake nameElement="Daily" amount="5000" numberElement="1" imgForEl={intake1} />
-        <Intake nameElement="Average" amount="2500" numberElement="2" imgForEl={intake2} />
-        <Intake nameElement="Total" amount="17000" numberElement="3" imgForEl={intake3} />
+        <Intake nameElement="Daily" amount={dailyIntakeWater} numberElement="1" imgForEl={intake1} />
+        <Intake nameElement="Average" amount={averageWaterIntake()} numberElement="2" imgForEl={intake2} />
+        <Intake nameElement="Total" amount={calculateWater()} numberElement="3" imgForEl={intake3} />
       </div>
       <div className={styles.currentChosenMenuLink}>
       </div>
