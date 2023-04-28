@@ -78,31 +78,32 @@ const Main = ({ userName, humanImg, calculateCalories, calculateWater, waterBala
               <p>Welcome back, <span className={styles.userName}>{userName.name === "" ? userName.username : userName.name}!</span></p>
             </div>
           </div>
+
           <div>
             <Routes>
-              <Route path="dashboard" element={            
-                <Dashboard 
+              <Route path="dashboard" element={
+                <Dashboard
                   typeOfTip='Hydration'
                   subtitleTip='Consuming fruit juices keeps up the hydration level.'
                   calculateWater={calculateWater}
                   dailyIntakeWater={dailyIntakeWater}
                   averageWaterIntake={averageWaterIntake}
-                />} 
+                />}
               />
-              <Route path="foodCalories" element={            
+              <Route path="foodCalories" element={
                 <FoodCalories
                   typeOfTip='Dietary'
                   subtitleTip='Healthy food keeps our body in good shape and improves physical condition.'
                   calculateCalories={calculateCalories}
-                />} 
+                />}
               />
-              <Route path="water" element={            
+              <Route path="water" element={
                 <Water
                   dailyIntakeWater={dailyIntakeWater}
                   setDailyIntakeWater={setDailyIntakeWater}
                   waterBalance={waterBalance}
                   setWaterLogElement={setWaterLogElement}
-                />} 
+                />}
               />
             </Routes>
           </div>
@@ -134,3 +135,6 @@ const Main = ({ userName, humanImg, calculateCalories, calculateWater, waterBala
 };
 
 export default Main;
+
+
+
