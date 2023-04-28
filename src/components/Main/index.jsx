@@ -1,5 +1,7 @@
+import React from "react";
 import styles from "./index.module.scss";
 import { Routes, Route, Link } from "react-router-dom";
+import dayjs from "dayjs";
 import Dashboard from "./Dashboard/index";
 import FoodCalories from "./Food/index";
 import Water from "./Water/index";
@@ -16,15 +18,24 @@ import calendar from "../../assets/img/main/calendar.svg";
 import bottle from "../../assets/img/main/water-bottle.svg";
 import bottleBackground from "../../assets/img/main/water-bottle-bg.svg";
 
-const Main = ({ userName, humanImg, calculateCalories, calculateWater, dailyIntakeWater, averageWaterIntake }) => {
-  const calendarDataMain = () => {
-    const calendarDay = new Date().toDateString().slice(0, 3);
-    const calendarDate = new Date().getDate();
-    const calendarMonth = new Date().toDateString().slice(3, 7);
-    const calendarYear = new Date().getFullYear();
-    const result = `${calendarDay}, ${calendarDate} ${calendarMonth} ${calendarYear}`;
-    return result;
-  }
+const Main = ({ userName, humanImg, calculateCalories, calculateWater, waterBalance, dailyIntakeWater, setDailyIntakeWater, averageWaterIntake }) => {
+  const [waterLogElement, setWaterLogElement] = React.useState([]);
+
+  // const timeForLog = () => {
+  //   const hour = new Date().getHours();
+  //   const minutes = new Date().getMinutes();
+  //   if (hour < 12) {
+  //     return `${hour}:${minutes} am`;
+  //   } else if (hour >= 12) {
+  //     return `${hour - 12}:${minutes} pm`;
+  //   }
+  // }
+
+  let time = dayjs();
+  const dataForCalendar = time.format("ddd, D MMM YYYY");
+  const setTimeLog = time.format("h:mm a");
+
+  let counter = 0;
 
   return (
     <div className={styles.body}>
@@ -86,7 +97,12 @@ const Main = ({ userName, humanImg, calculateCalories, calculateWater, dailyInta
                 />} 
               />
               <Route path="water" element={            
-                <Water />} 
+                <Water
+                  dailyIntakeWater={dailyIntakeWater}
+                  setDailyIntakeWater={setDailyIntakeWater}
+                  waterBalance={waterBalance}
+                  setWaterLogElement={setWaterLogElement}
+                />} 
               />
             </Routes>
           </div>
@@ -94,7 +110,7 @@ const Main = ({ userName, humanImg, calculateCalories, calculateWater, dailyInta
         <div className={styles.rightColumn}>
           <div className={styles.currentDay}>
             <img alt="calendar" src={calendar} />
-            <p>{calendarDataMain()}</p>
+            <p>{dataForCalendar}</p>
           </div>
           <div className={styles.bottle}>
             <img src={bottle} alt="bottle" className={styles.bottleImg} />
@@ -103,15 +119,13 @@ const Main = ({ userName, humanImg, calculateCalories, calculateWater, dailyInta
           </div>
           <div className={styles.intakeGoal}>
             Intake Goal
-            <span className={styles.waterMl}>0 ml / {calculateWater()} ml</span>
+            <span className={styles.waterMl}>{dailyIntakeWater} ml / {calculateWater()} ml</span>
           </div>
           <div className={styles.drinkLog}>
-            Drink log
-            <WaterLog waterAmount="100" time="02:00 pm" />
-            <WaterLog waterAmount="100" time="02:00 pm" />
-            <WaterLog waterAmount="100" time="02:00 pm" />
-            <WaterLog waterAmount="100" time="02:00 pm" />
-            <WaterLog waterAmount="100" time="02:00 pm" />
+            <p>Drink log</p>
+            {waterLogElement.map(elem => (
+              <WaterLog key={counter++} waterAmount={elem} time={setTimeLog} />
+            ))}
           </div>
         </div>
       </div>

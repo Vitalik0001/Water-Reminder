@@ -107,13 +107,15 @@ export default function App() {
           calculateCalories={calculateCalories}
         />} 
       />
-      <Route path="/main*" element={          
+      <Route path="/main/*" element={          
         <Main 
           userName={formData}
           humanImg={humanImg}
           calculateCalories={calculateCalories}
           calculateWater={calculateWater}
+          waterBalance={waterBalance}
           dailyIntakeWater={dailyIntakeWater}
+          setDailyIntakeWater={setDailyIntakeWater}
           averageWaterIntake={averageWaterIntake}
         />} 
       />
