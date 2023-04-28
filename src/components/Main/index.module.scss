@@ -213,15 +213,21 @@
 
 .drinkLog {
   font-size: 18px;
+  font-weight: 500;
+  height: 325px;
+  overflow-y: auto;
   line-height: 27px;
   text-align: center;
   color: $darkPurple;
   background: #f7f9fd;
   border-radius: 12px;
-  padding: 24px;
+  padding: 24px 24px 24px 24px;
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-top: 30px;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
 }
