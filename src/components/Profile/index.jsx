@@ -99,22 +99,22 @@ const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg, calc
         </div>
         <div className={styles.radioButtonsElement}>
           <p className={styles.formText}>Activity</p>
-          <form class={styles.form}>
-            <label for="01">Minimal</label>
+          <form className={styles.form}>
+            <label htmlFor="01">Minimal</label>
             <input id="01" type="radio" name="activity" value="minimal" onChange={onChange} />
-            <label for="02">Low</label>
+            <label htmlFor="02">Low</label>
             <input id="02" type="radio" name="activity" value="low" onChange={onChange} />
-            <label for="03">Average</label>
+            <label htmlFor="03">Average</label>
             <input id="03" type="radio" name="activity" value="average" onChange={onChange} />
-            <label for="04">High</label>
+            <label htmlFor="04">High</label>
             <input id="04" type="radio" name="activity" value="high" onChange={onChange} />
-            <label for="05">Very high</label>
+            <label htmlFor="05">Very high</label>
             <input id="05" type="radio" name="activity" value="very high" onChange={onChange} />
           </form>
         </div>
       </div>
       { isEmpty() && <div className={styles.nextButton}>
-        <Link to="/main/dashboard" onClick={calculateCalories}>Next</Link> 
+        <Link to="/main" onClick={calculateCalories}>Next</Link> 
       </div> }
     </div>  
   )

@@ -5,7 +5,7 @@ const Start = () => {
   return (
     <div className={styles.content}>
       <p className={styles.title}>Water Reminder</p>
-      <Link className={styles.buttonStart} to="/profile">Continue</Link>
+      <Link className={styles.buttonStart} to="profile">Continue</Link>
     </div>
   )
 }

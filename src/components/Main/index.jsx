@@ -1,10 +1,6 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { Routes, Route, Link } from "react-router-dom";
-import dayjs from "dayjs";
-import Dashboard from "./Dashboard/index";
-import FoodCalories from "./Food/index";
-import Water from "./Water/index";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import WaterLog from "./WaterLog/index";
 
 // imgs
@@ -18,23 +14,7 @@ import calendar from "../../assets/img/main/calendar.svg";
 import bottle from "../../assets/img/main/water-bottle.svg";
 import bottleBackground from "../../assets/img/main/water-bottle-bg.svg";
 
-const Main = ({ userName, humanImg, calculateCalories, calculateWater, waterBalance, dailyIntakeWater, setDailyIntakeWater, averageWaterIntake }) => {
-  const [waterLogElement, setWaterLogElement] = React.useState([]);
-
-  // const timeForLog = () => {
-  //   const hour = new Date().getHours();
-  //   const minutes = new Date().getMinutes();
-  //   if (hour < 12) {
-  //     return `${hour}:${minutes} am`;
-  //   } else if (hour >= 12) {
-  //     return `${hour - 12}:${minutes} pm`;
-  //   }
-  // }
-
-  let time = dayjs();
-  const dataForCalendar = time.format("ddd, D MMM YYYY");
-  const setTimeLog = time.format("h:mm a");
-
+const Main = ({ userName, humanImg, calculateWater, dailyIntakeWater, waterLogElement, dataForCalendar }) => {
   let counter = 0;
 
   return (
@@ -50,15 +30,15 @@ const Main = ({ userName, humanImg, calculateCalories, calculateWater, waterBala
             <nav className={styles.menuNav}>
               <div className={styles.dashboard}>
                 <img alt="dashboard" src={dashboard} />
-                <Link to="/main/dashboard">Dashboard</Link>
+                <NavLink to=".">Dashboard</NavLink>
               </div>
               <div className={styles.foodCalories}>
                 <img alt="burger" src={burger} />
-                <Link to="/main/foodCalories">Food Calories</Link>
+                <NavLink to="food">Food Calories</NavLink>
               </div>
               <div className={styles.water}>
                 <img alt="water" src={waterDrop} />
-                <Link to="/main/water">Water</Link>
+                <NavLink to="water">Water</NavLink>
               </div>
             </nav>
           </div>
@@ -78,34 +58,8 @@ const Main = ({ userName, humanImg, calculateCalories, calculateWater, waterBala
               <p>Welcome back, <span className={styles.userName}>{userName.name === "" ? userName.username : userName.name}!</span></p>
             </div>
           </div>
-
           <div>
-            <Routes>
-              <Route path="dashboard" element={
-                <Dashboard
-                  typeOfTip='Hydration'
-                  subtitleTip='Consuming fruit juices keeps up the hydration level.'
-                  calculateWater={calculateWater}
-                  dailyIntakeWater={dailyIntakeWater}
-                  averageWaterIntake={averageWaterIntake}
-                />}
-              />
-              <Route path="foodCalories" element={
-                <FoodCalories
-                  typeOfTip='Dietary'
-                  subtitleTip='Healthy food keeps our body in good shape and improves physical condition.'
-                  calculateCalories={calculateCalories}
-                />}
-              />
-              <Route path="water" element={
-                <Water
-                  dailyIntakeWater={dailyIntakeWater}
-                  setDailyIntakeWater={setDailyIntakeWater}
-                  waterBalance={waterBalance}
-                  setWaterLogElement={setWaterLogElement}
-                />}
-              />
-            </Routes>
+            <Outlet />
           </div>
         </div>
         <div className={styles.rightColumn}>
@@ -125,7 +79,7 @@ const Main = ({ userName, humanImg, calculateCalories, calculateWater, waterBala
           <div className={styles.drinkLog}>
             <p>Drink log</p>
             {waterLogElement.map(elem => (
-              <WaterLog key={counter++} waterAmount={elem} time={setTimeLog} />
+              <WaterLog key={counter++} waterAmount={elem.numInput} time={elem.time} />
             ))}
           </div>
         </div>

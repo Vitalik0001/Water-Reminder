@@ -185,7 +185,29 @@
 .childrenTips {
   max-height: 210px;
   display: flex;
-  // justify-content: space-around;
+  gap: 75px;
+  margin: 20px 50px;
+}
+
+.waterList {
+  font-size: 14px;
+  color: black;
+  padding-left: 35px;
+  list-style-type: circle;
+  & li {
+    line-height: 25px;
+    margin-bottom: 15px;
+  }
+  & li:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.waterTipsList {
+  border-left: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .subtitleTip {
