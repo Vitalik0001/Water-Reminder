@@ -89,3 +89,6 @@ const Main = ({ userName, humanImg, calculateWater, dailyIntakeWater, waterLogEl
 };
 
 export default Main;
+
+
+
