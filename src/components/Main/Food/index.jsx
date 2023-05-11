@@ -75,8 +75,7 @@ const Food = ({ typeOfTip, subtitleTip, calculateCalories }) => {
         <p>{typeOfTip} Tips</p>
         <span className={styles.subtitleTip}>{subtitleTip}</span>
         <div className={styles.burgerCaloriesTips}>
-          {/* <div className={styles.popupCalories}>&#128523; Ooops... Waiting for your products )</div> */}
-          {resultApiCall()}
+          {responseData.length < 1 ? <div className={styles.popupCalories}>&#128523; Ooops... Waiting for your products )</div> : resultApiCall()}
         </div>  
       </div>
     </div>

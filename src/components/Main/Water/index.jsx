@@ -4,7 +4,7 @@ import CircularProgressWithLabel from './ProgressBar/index.jsx';
 import waterImages from "../../../assets/img/main/water-Images.svg";
 import waterStar from "../../../assets/img/main/water-star.svg";
 
-const Water = ({ waterBalance, dailyIntakeWater, setDailyIntakeWater, setWaterLogElement }) => {
+const Water = ({ waterBalance, dailyIntakeWater, setDailyIntakeWater, setWaterLogElement, setTimeLog }) => {
   const [numInput, setNumInput] = React.useState(0);
   const [percentages, setPercentages] = React.useState(0);
 
@@ -25,7 +25,10 @@ const Water = ({ waterBalance, dailyIntakeWater, setDailyIntakeWater, setWaterLo
   const handleChangeValue = () => {
     setWaterLogElement(prev => ([
       ...prev, 
-      numInput
+      {
+        numInput: numInput,
+        time: setTimeLog
+      }
     ]));
     setDailyIntakeWater(dailyIntake => dailyIntake + Number(numInput));
     console.log(dailyIntakeWater);
@@ -97,6 +100,13 @@ const Water = ({ waterBalance, dailyIntakeWater, setDailyIntakeWater, setWaterLo
           <span className={styles.subtitleTip}>This graph will help you monitor the amount of water in your body</span>
           <div className={styles.childrenTips}>
             <CircularProgressWithLabel value={percentages} />
+            <div className={styles.waterTipsList}>
+              <ul className={styles.waterList}>
+                <li>Drink water before, during and after exercise.</li>
+                <li>Carry a water bottle with you for easy access to drinking water while at home, work or on the go.</li>
+                <li>Liven up water by adding citrus wedges, cucumber or some other sliced fruit or vegetable.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
