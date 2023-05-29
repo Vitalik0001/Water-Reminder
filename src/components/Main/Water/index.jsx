@@ -3,41 +3,25 @@ import styles from "./index.module.scss";
 import CircularProgressWithLabel from './ProgressBar/index.jsx';
 import waterImages from "../../../assets/img/main/water-Images.svg";
 import waterStar from "../../../assets/img/main/water-star.svg";
+import {useDispatch, useSelector} from "react-redux";
+import {handleChangeValue, handleChange, incNum, decNum} from "../../../redux/waterCounter/slice";
+import {motion} from "framer-motion";
 
-const Water = ({ waterBalance, dailyIntakeWater, setDailyIntakeWater, setWaterLogElement, setTimeLog }) => {
-  const [numInput, setNumInput] = React.useState(0);
-  const [percentages, setPercentages] = React.useState(0);
 
-  const incNum = () => {
-    if (numInput < 3000) {
-      setNumInput(Number(numInput) + 50);
-    }
-  };
-  const decNum = () => {
-    if (numInput > 0) {
-      setNumInput(numInput - 50);
-    }
-  };
-  const handleChange = (e) => {
-    setNumInput(e.target.value);
-  };
+const Water = () => {
+  const dispatch = useDispatch();
+  const percentage = useSelector(state => state.dailyIntake.percentages);
+  const numFromInput = useSelector(state => state.dailyIntake.numberFromInput);
 
-  const handleChangeValue = () => {
-    setWaterLogElement(prev => ([
-      ...prev, 
-      {
-        numInput: numInput,
-        time: setTimeLog
-      }
-    ]));
-    setDailyIntakeWater(dailyIntake => dailyIntake + Number(numInput));
-    console.log(dailyIntakeWater);
-    setPercentages(dailyIntakeWater * 100 / waterBalance);
-  }
+  const waterBalance = useSelector(state => state.humanData.waterBalance);
 
   return (
-    <div className={styles.waterPage}>
-      <div className={styles.waterGroup}>
+    <motion.div
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+    >
+      <div>
         <div className={styles.waterImages}>
           <div className={styles.imgsWater}>
             <img
@@ -52,43 +36,43 @@ const Water = ({ waterBalance, dailyIntakeWater, setDailyIntakeWater, setWaterLo
             />
           </div>
           <div className={styles.calculateWater}>
-            <div className={styles.inputGroupPrepend}>
+            <div>
               <p className={styles.waterTitle}>Your Daily Intake: <span>{waterBalance} ml</span></p>
               <p className={styles.waterSubtitle}>
                 <span>Water reminder</span> is a smart calculator to calculate the water balance in your body. Using it, you will always keep the rate of water within the norm.
               </p>
               <div className={styles.waterCalculator}>
                 <div className={styles.calculatorGroup}>
-                  <div className={styles.stepperInput}>
+                  <div>
                     <button
                       className={styles.buttonMinus}
                       type="button"
-                      onClick={decNum}
+                      onClick={() => dispatch(decNum())}
                     >
                       -
                     </button>
                   </div>
-                  <div className={styles.stepperInputContent}>
+                  <div>
                     <input
                       type="number"
                       min={0}
                       max={3000}
                       className={styles.inputWater}
-                      value={numInput}
-                      onChange={handleChange}
+                      value={numFromInput}
+                      onChange={(e) => dispatch(handleChange(e.target.value))}
                     />
                   </div>
                   <div>
                     <button
                       className={styles.buttonPlus}
                       type="button"
-                      onClick={incNum}
+                      onClick={() => dispatch(incNum())}
                     >
                       +
                     </button>
                   </div>
                 </div>
-                <button className={styles.buttonAdd} type="button" onClick={handleChangeValue}>
+                <button className={styles.buttonAdd} type="button" onClick={() => dispatch(handleChangeValue(waterBalance))}>
                   Add
                 </button>
               </div>
@@ -99,7 +83,7 @@ const Water = ({ waterBalance, dailyIntakeWater, setDailyIntakeWater, setWaterLo
           <p>Status board</p>
           <span className={styles.subtitleTip}>This graph will help you monitor the amount of water in your body</span>
           <div className={styles.childrenTips}>
-            <CircularProgressWithLabel value={percentages} />
+            <CircularProgressWithLabel value={percentage} />
             <div className={styles.waterTipsList}>
               <ul className={styles.waterList}>
                 <li>Drink water before, during and after exercise.</li>
@@ -110,7 +94,7 @@ const Water = ({ waterBalance, dailyIntakeWater, setDailyIntakeWater, setWaterLo
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

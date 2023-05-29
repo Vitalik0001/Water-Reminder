@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./index.module.scss";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import {Link, NavLink, Outlet} from "react-router-dom";
+import {motion} from "framer-motion";
+import {useSelector} from "react-redux";
 import WaterLog from "./WaterLog/index";
+import dayjs from "dayjs";
 
-// imgs
-
+// img
 import logoDrop from "../../assets/img/main/logo-drop.png";
 import waterDrop from "../../assets/img/main/water-drop.svg";
 import dashboard from "../../assets/img/main/dashboard.svg";
@@ -14,15 +16,28 @@ import calendar from "../../assets/img/main/calendar.svg";
 import bottle from "../../assets/img/main/water-bottle.svg";
 import bottleBackground from "../../assets/img/main/water-bottle-bg.svg";
 
-const Main = ({ userName, humanImg, calculateWater, dailyIntakeWater, waterLogElement, dataForCalendar }) => {
+const Main = () => {
   let counter = 0;
+
+  const dailyIntake = useSelector(state => state.dailyIntake.sumFromInput);
+  const waterLogElement = useSelector(state => state.dailyIntake.waterWidget);
+  const dataForCalendar = dayjs().format("ddd, D MMM YYYY");
+
+  const formDataInput = useSelector(state => state.humanData.formData);
+  const calculateWater = useSelector(state => state.humanData.waterBalance);
+  const humanImg = useSelector(state => state.humanData.humanImg);
 
   return (
     <div className={styles.body}>
       <div className={styles.wrapper}>
         <div className={styles.navBody}>
           <div className={styles.logo}>
-            <img alt="logo-drop" src={logoDrop} />
+            <motion.div
+              whileHover={{ scale: 1.2 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <img alt="logo-drop" src={logoDrop} />
+            </motion.div>
             <p>Water Reminder</p>
           </div>
           <div className={styles.menu}>
@@ -30,24 +45,29 @@ const Main = ({ userName, humanImg, calculateWater, dailyIntakeWater, waterLogEl
             <nav className={styles.menuNav}>
               <div className={styles.dashboard}>
                 <img alt="dashboard" src={dashboard} />
-                <NavLink to=".">Dashboard</NavLink>
+                <NavLink to="." className={styles.navClause}>Dashboard</NavLink>
               </div>
               <div className={styles.foodCalories}>
                 <img alt="burger" src={burger} />
-                <NavLink to="food">Food Calories</NavLink>
+                <NavLink to="food" className={styles.navClause}>Food Calories</NavLink>
               </div>
               <div className={styles.water}>
                 <img alt="water" src={waterDrop} />
-                <NavLink to="water">Water</NavLink>
+                <NavLink to="water" className={styles.navClause}>Water</NavLink>
               </div>
             </nav>
           </div>
           <div className={styles.user}>
             <img src={humanImg} className={styles.userImg} alt="user-img"></img>
-            <div className={styles.userInfo}>
+            <div>
               <div className={styles.userMailName}>
-                <p>{userName.name === "" ? userName.username : userName.name}</p>
-                <Link to="/profile"><img alt="setting" src={setting} /></Link>
+                <p>{formDataInput.name === "" ? formDataInput.username : formDataInput.name}</p>
+                <motion.div
+                  whileHover={{rotate: 70}}
+
+                >
+                  <Link to="/profile"><img alt="setting" src={setting} /></Link>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -55,7 +75,7 @@ const Main = ({ userName, humanImg, calculateWater, dailyIntakeWater, waterLogEl
         <div className={styles.center}>
           <div className={styles.centerHeader}>
             <div className={styles.greeting}>
-              <p>Welcome back, <span className={styles.userName}>{userName.name === "" ? userName.username : userName.name}!</span></p>
+              <p>Welcome back, <span className={styles.userName}>{formDataInput.name === "" ? formDataInput.username : formDataInput.name}!</span></p>
             </div>
           </div>
           <div>
@@ -74,12 +94,16 @@ const Main = ({ userName, humanImg, calculateWater, dailyIntakeWater, waterLogEl
           </div>
           <div className={styles.intakeGoal}>
             Intake Goal
-            <span className={styles.waterMl}>{dailyIntakeWater} ml / {calculateWater()} ml</span>
+            <span className={styles.waterMl}>{dailyIntake} ml / {calculateWater} ml</span>
           </div>
           <div className={styles.drinkLog}>
             <p>Drink log</p>
             {waterLogElement.map(elem => (
-              <WaterLog key={counter++} waterAmount={elem.numInput} time={elem.time} />
+              <motion.div
+                animate={{ y: 10 }}
+              >
+                <WaterLog key={counter++} waterAmount={elem.waterNum} time={elem.time} />
+              </motion.div>
             ))}
           </div>
         </div>
@@ -89,6 +113,3 @@ const Main = ({ userName, humanImg, calculateWater, dailyIntakeWater, waterLogEl
 };
 
 export default Main;
-
-
-

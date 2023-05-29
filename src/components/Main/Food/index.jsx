@@ -1,8 +1,10 @@
 import React from "react";
 import styles from "./index.module.scss";
 import burger from "../../../assets/img/main/burger-foodCalories.png";
+import {useSelector} from "react-redux";
+import {motion} from "framer-motion";
 
-const Food = ({ typeOfTip, subtitleTip, calculateCalories }) => {
+const Food = () => {
   const [inputData, setInputData] = React.useState("");
   const [responseData, setResponseData] = React.useState([]);
 
@@ -52,10 +54,16 @@ const Food = ({ typeOfTip, subtitleTip, calculateCalories }) => {
     });
   }
 
+  const calories = useSelector(state => state.humanData.bmrData);
+
   return (
-    <div className={styles.foodCalories}>
+    <motion.div
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+    >
       <div className={styles.burgerGroup}>
-        <div className={styles.burgerCalories}>
+        <div>
           <img 
             className={styles.foodBurger}
             src={burger}
@@ -63,7 +71,7 @@ const Food = ({ typeOfTip, subtitleTip, calculateCalories }) => {
           />
         </div>
         <div className={styles.calculateCalories}>
-          <p className={styles.dailyCaloriesTitle}>Your Intake Goal: <span>{calculateCalories()} kl</span></p>
+          <p className={styles.dailyCaloriesTitle}>Your Intake Goal: <span>{calories} kl</span></p>
           <p className={styles.dailyCaloriesSubtitle}><span>Special nutrient calculator:</span> now you can easily find out everything about your favorite foods that you consume every day. To request, write the weight in grams or kg and the name of the product</p>
           <div className={styles.infoCalories}>
             <input type="text" name="text" className={styles.inputCalories} placeholder="* 1kg burger *" onChange={inputTextData}></input>
@@ -72,13 +80,13 @@ const Food = ({ typeOfTip, subtitleTip, calculateCalories }) => {
         </div>
       </div>
       <div className={styles.tipsCalories}>
-        <p>{typeOfTip} Tips</p>
-        <span className={styles.subtitleTip}>{subtitleTip}</span>
+        <p>Dietary Tips</p>
+        <span className={styles.subtitleTip}>Healthy food keeps our body in good shape and improves physical condition.</span>
         <div className={styles.burgerCaloriesTips}>
           {responseData.length < 1 ? <div className={styles.popupCalories}>&#128523; Ooops... Waiting for your products )</div> : resultApiCall()}
         </div>  
       </div>
-    </div>
+    </motion.div>
   )
 }
 

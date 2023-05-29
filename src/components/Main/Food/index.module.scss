@@ -8,8 +8,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
-    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
-    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+    0 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0 2.72px 3.712px rgba(0, 0, 0, 0.008304);
   border: 1px solid #f2eeee;
   border-radius: 12px;
   margin-top: 75px;
@@ -45,17 +45,15 @@
 
 .tipsCalories{
   width: 779px;
-  background-color: $white;
   border: 1px solid #f2eeee;
   box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
-    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
-    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+    0 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0 2.72px 3.712px rgba(0, 0, 0, 0.008304);
   border-radius: 20px;
   font-weight: 500;
   font-size: 20px;
   line-height: 30px;
   display: flex;
-  align-items: left;
   flex-direction: column;
   color: $darkGray;
   padding: 24px;
@@ -75,14 +73,6 @@
   color: black;
   margin-top: 4px;
   margin-bottom: 16px;
-}
-
-.colariesCalucalate {
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  text-align: center;
-  margin-top: 30px;
 }
 
 .formControl {
@@ -161,8 +151,8 @@
 
 .burgerCaloriesTips {
   box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
-    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
-    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+    0 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0 2.72px 3.712px rgba(0, 0, 0, 0.008304);
   border: 1px solid #f2eeee;
   border-radius: 12px;
   padding: 40px 40px 30px 40px;
@@ -193,7 +183,7 @@
 .popupCalories {
   display: flex;
   justify-content: center;
-  padding: 60px 0px;
+  padding: 60px 0;
   font-size: 30px;
   color: $gray;
 }
