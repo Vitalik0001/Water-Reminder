@@ -142,12 +142,12 @@ input[type=number] {
     transition: 0.5s;
   }
   &:invalid {
-    animation: justshake 0.3s forwards;
+    animation: shake 0.3s forwards;
     border-bottom: 1px solid $red;
     color: $red;
   }
   
-  @keyframes justshake {
+  @keyframes shake {
     25% {
       transform: translateX(5px);
     }
@@ -161,7 +161,7 @@ input[type=number] {
     }
   
     100% {
-      transform: translateX-(5px);
+      transform: translateX(-5px);
     }
   }
 }
@@ -231,7 +231,7 @@ input[type=number] {
   font-size: 18px;
   font-weight: 500;
   position: absolute;
-  padding: 10px 0px 0px 90px;
+  padding: 10px 0 0 90px;
   z-index: 10;
 }
 
@@ -251,8 +251,6 @@ input[type=number] {
   border-radius: var(--border-radius);
   border-bottom: 1px solid $veryLightGray;
   color: var(--text);
-  position: relative;
-  // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.144);
   padding: 50px 20px 20px 20px;
   display: grid;
   grid-template-columns: auto var(--radio-size);

@@ -1,10 +1,11 @@
 import styles from "./index.module.scss";
+import {useSelector} from "react-redux";
 import Intake from "./Intake/index.jsx";
 import Tip from "./Tip/index.jsx";
 import Weather from "./Weather";
+import { motion } from "framer-motion";
 
-// imgs
-
+// img
 import intake1 from "../../../assets/img/main/daily-intake-1.svg";
 import intake2 from "../../../assets/img/main/daily-intake-2.svg";
 import intake3 from "../../../assets/img/main/daily-intake-3.svg";
@@ -12,42 +13,47 @@ import watermelon from "../../../assets/img/main/watermelon.svg";
 import oranges from "../../../assets/img/main/oranges.svg";
 import grapes from "../../../assets/img/main/grapes.svg";
 
-// weather icons
 
 
+const Dashboard = () => {
+    const averageIntake = useSelector(state => state.dailyIntake.averageIntake);
+    const totalIntake = useSelector(state => state.dailyIntake.sumFromInput);
 
-const Dashboard = ({ typeOfTip, subtitleTip, calculateWater, dailyIntakeWater, averageWaterIntake }) => {
-
+    const waterBalance = useSelector(state => state.humanData.waterBalance);
 
   return (
-    <div>
+    <motion.div
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      exit={{opacity: 0}}
+    >
       <div className={styles.weather}>
         <Weather />
       </div>
       <div className={styles.intakes}>
         <Intake
           nameElement="Daily"
-          amount={dailyIntakeWater}
+          amount={totalIntake}
           numberElement="1"
           imgForEl={intake1}
         />
         <Intake
           nameElement="Average"
-          amount={averageWaterIntake()}
+          amount={averageIntake}
           numberElement="2"
           imgForEl={intake2}
         />
         <Intake
           nameElement="Total"
-          amount={calculateWater()}
+          amount={waterBalance}
           numberElement="3"
           imgForEl={intake3}
         />
       </div>
       <div className={styles.currentChosenMenuLink}></div>
       <div className={styles.tipsBoard}>
-        {typeOfTip} Tips
-        <span className={styles.subtitleTip}>{subtitleTip} </span>
+        <p>Hydration Tips</p>
+        <span className={styles.subtitleTip}>Consuming fruit juices keeps up the hydration level.</span>
         <div className={styles.tipsRow}>
           <Tip
             numberElement="1"
@@ -69,7 +75,7 @@ const Dashboard = ({ typeOfTip, subtitleTip, calculateWater, dailyIntakeWater, a
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

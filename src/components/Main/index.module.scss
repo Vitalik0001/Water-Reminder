@@ -129,7 +129,7 @@
 
 .greeting {
   color: $darkPurple;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
@@ -156,12 +156,11 @@
   line-height: 28px;
   text-align: left;
   color: $darkPurple;
-  margin-bottom: 40px;
+  margin: 0 auto 40px auto;
   display: flex;
   align-items: center;
   gap: 11px;
   max-width: 195px;
-  margin-left: auto;
 }
 
 .bottle {
@@ -193,8 +192,7 @@
 }
 
 .intakeGoal {
-  background: url("../../assets/img/main/intake-goal.svg");
-  background-repeat: no-repeat;
+  background: url("../../assets/img/main/intake-goal.svg") no-repeat;
   background-size: contain;
   max-width: 260px;
   padding: 24px;
@@ -215,9 +213,7 @@
   font-size: 18px;
   font-weight: 500;
   height: 325px;
-  overflow-y: auto;
   line-height: 27px;
-  text-align: center;
   color: $darkPurple;
   background: #f7f9fd;
   border-radius: 12px;
@@ -227,7 +223,36 @@
   flex-direction: column;
   gap: 8px;
   margin-top: 30px;
+  overflow-y: auto;
   &::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
   }
+}
+
+.navClause {
+  display: inline-block;
+  position: relative;
+}
+
+.navClause::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #66c8fc;
+  transform-origin: bottom right;
+  transition: transform 0.35s ease-out;
+}
+
+.navClause:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  border-radius: 3px;
+}
+
+.menuNav a:hover {
+  color: black;
 }

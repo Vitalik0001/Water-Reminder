@@ -1,19 +1,23 @@
 import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
 import React from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {calculateFromData, getHumanImg, handleChange} from "../../redux/humanData/slice";
+import {motion} from "framer-motion";
 
-const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg, calculateCalories }) => {
+const Profile = () => {
+  const dispatch = useDispatch();
+
+  const formDataInput = useSelector(state => state.humanData.formData);
+  const humanImg = useSelector(state => state.humanData.humanImg);
+
   const isEmpty = () => {
-    const dataInput = Object.values(formData);
-    if (dataInput.includes("")) {
-      return false;
-    } else {
-      return true;
-    }
+    const dataInput = Object.values(formDataInput);
+    return !dataInput.includes("");
   }
 
   const isCorrectName = (event) => {
-    if (formDataName.trim() === "") {
+    if (formDataInput.name.trim() === "") {
       event.target.style = "border-bottom: 1px solid red";
     } else {
       event.target.style = "";
@@ -22,21 +26,26 @@ const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg, calc
 
   return (
     <div className={styles.data}>
-      <div className={styles.logo}>
+      <motion.div
+        className={styles.logo}
+        initial={{scale: 0}}
+        animate={{scale: 1}}
+        // exit={{scale: 0.8}}
+      >
         <img alt="logo" src={humanImg} className={styles.human}/>
-      </div>
-      <h2 className={styles.title}>{formData.name === "" ? formData.username : formData.name}</h2>
+      </motion.div>
+      <h2 className={styles.title}>{formDataInput.name === "" ? formDataInput.username : formDataInput.name}</h2>
       <div className={styles.userInformation}>
         <div className={styles.user}>
           <div className={styles.gender}>
             <p>Gender</p>
             <div className={styles.radioInputs}>
               <label className={styles.radio}>
-                <input type="radio" name="gender" onChange={onChange} onClick={getHumanImg} value="male"/>
+                <input type="radio" name="gender" onChange={(e) => dispatch(handleChange(e))} onClick={() => dispatch(getHumanImg('male'))} value="male"/>
                 <span className={styles.name}>Male</span>
               </label>
               <label className={styles.radio}>
-                <input type="radio" name="gender" onChange={onChange} onClick={getHumanImg} value="female"/>
+                <input type="radio" name="gender" onChange={(e) => dispatch(handleChange(e))} onClick={() => dispatch(getHumanImg('female'))} value="female"/>
                 <span className={styles.name}>Female</span>
               </label>
             </div>
@@ -49,9 +58,9 @@ const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg, calc
               name="name"
               maxLength={12}
               placeholder="Write your name..."
-              onChange={onChange}
+              onChange={(e) => dispatch(handleChange(e))}
               onKeyDown={isCorrectName}
-              value={formData.name}
+              value={formDataInput.name}
             />
           </div>
           <div className={styles.age}>
@@ -64,8 +73,8 @@ const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg, calc
               max="100" 
               name="age" 
               placeholder="12 y.o"
-              onChange={onChange}
-              value={formData.age}
+              onChange={(e) => dispatch(handleChange(e))}
+              value={formDataInput.age}
             />
           </div>
           <div className={styles.weight}>
@@ -78,8 +87,8 @@ const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg, calc
               max="100" 
               name="weight" 
               placeholder="35 kg"
-              onChange={onChange}
-              value={formData.weight}
+              onChange={(e) => dispatch(handleChange(e))}
+              value={formDataInput.weight}
             />
           </div>
           <div className={styles.height}>
@@ -92,8 +101,8 @@ const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg, calc
               max="220" 
               name="height" 
               placeholder="140 cm"
-              onChange={onChange}
-              value={formData.height}
+              onChange={(e) => dispatch(handleChange(e))}
+              value={formDataInput.height}
             />
           </div>
         </div>
@@ -101,20 +110,20 @@ const Profile = ({ onChange, formData, formDataName, humanImg, getHumanImg, calc
           <p className={styles.formText}>Activity</p>
           <form className={styles.form}>
             <label htmlFor="01">Minimal</label>
-            <input id="01" type="radio" name="activity" value="minimal" onChange={onChange} />
+            <input id="01" type="radio" name="activity" value="minimal" onChange={(e) => dispatch(handleChange(e))} />
             <label htmlFor="02">Low</label>
-            <input id="02" type="radio" name="activity" value="low" onChange={onChange} />
+            <input id="02" type="radio" name="activity" value="low" onChange={(e) => dispatch(handleChange(e))} />
             <label htmlFor="03">Average</label>
-            <input id="03" type="radio" name="activity" value="average" onChange={onChange} />
+            <input id="03" type="radio" name="activity" value="average" onChange={(e) => dispatch(handleChange(e))} />
             <label htmlFor="04">High</label>
-            <input id="04" type="radio" name="activity" value="high" onChange={onChange} />
+            <input id="04" type="radio" name="activity" value="high" onChange={(e) => dispatch(handleChange(e))} />
             <label htmlFor="05">Very high</label>
-            <input id="05" type="radio" name="activity" value="very high" onChange={onChange} />
+            <input id="05" type="radio" name="activity" value="very high" onChange={(e) => dispatch(handleChange(e))} />
           </form>
         </div>
       </div>
       { isEmpty() && <div className={styles.nextButton}>
-        <Link to="/main" onClick={calculateCalories}>Next</Link> 
+        <Link to="/main" onClick={() => dispatch(calculateFromData())}>Next</Link>
       </div> }
     </div>  
   )
