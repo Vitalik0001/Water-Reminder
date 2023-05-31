@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import styles from "./index.module.scss";
 import {Link, NavLink, Outlet} from "react-router-dom";
 import {motion} from "framer-motion";
@@ -17,8 +17,6 @@ import bottle from "../../assets/img/main/water-bottle.svg";
 import bottleBackground from "../../assets/img/main/water-bottle-bg.svg";
 
 const Main = () => {
-  let counter = 0;
-
   const dailyIntake = useSelector(state => state.dailyIntake.sumFromInput);
   const waterLogElement = useSelector(state => state.dailyIntake.waterWidget);
   const dataForCalendar = dayjs().format("ddd, D MMM YYYY");
@@ -26,6 +24,15 @@ const Main = () => {
   const formDataInput = useSelector(state => state.humanData.formData);
   const calculateWater = useSelector(state => state.humanData.waterBalance);
   const humanImg = useSelector(state => state.humanData.humanImg);
+
+  let counter = 0;
+
+  const waterLogRef = useRef();
+
+  const newElements = waterLogElement.map(elem => elem);
+  useEffect(() => {
+    waterLogRef.current?.scrollIntoView();
+  }, [newElements]);
 
   return (
     <div className={styles.body}>
@@ -64,7 +71,7 @@ const Main = () => {
                 <p>{formDataInput.name === "" ? formDataInput.username : formDataInput.name}</p>
                 <motion.div
                   whileHover={{rotate: 70}}
-
+                  transition={{ duration: 0.2 }}
                 >
                   <Link to="/profile"><img alt="setting" src={setting} /></Link>
                 </motion.div>
@@ -94,10 +101,22 @@ const Main = () => {
           </div>
           <div className={styles.intakeGoal}>
             Intake Goal
-            <span className={styles.waterMl}>{dailyIntake} ml / {calculateWater} ml</span>
+            {dailyIntake >= 2600
+              ? <motion.p
+                  initial={{  opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className={styles.widgetBalance}
+                >
+                  Complete !
+                </motion.p>
+              : <span className={styles.waterMl}>{dailyIntake} ml / {calculateWater} ml</span>
+            }
           </div>
           <div className={styles.drinkLog}>
-            <p>Drink log</p>
+            <div className={styles.waterTitle}>
+              <p>Drink log</p>
+            </div>
             {waterLogElement.map(elem => (
               <motion.div
                 animate={{ y: 10 }}
@@ -105,6 +124,7 @@ const Main = () => {
                 <WaterLog key={counter++} waterAmount={elem.waterNum} time={elem.time} />
               </motion.div>
             ))}
+            <div ref={waterLogRef} />
           </div>
         </div>
       </div>
