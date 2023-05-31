@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import _ from "lodash";
 import user from "../../assets/img/profile/user.png";
 import imgData from "../../data";
@@ -77,5 +77,5 @@ const humanData = createSlice({
     }
 })
 
-export const {handleChange, getHumanImg, calculateFromData} = humanData.actions;
+export const { handleChange, getHumanImg, calculateFromData } = humanData.actions;
 export default humanData.reducer;

@@ -1,9 +1,9 @@
 import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {calculateFromData, getHumanImg, handleChange} from "../../redux/humanData/slice";
-import {motion} from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import { calculateFromData, getHumanImg, handleChange } from "../../redux/humanData/slice";
+import { motion } from "framer-motion";
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -24,14 +24,27 @@ const Profile = () => {
     }
   }
 
+  const validateRange = (value, range) => {
+    return value >= range.min && value <= range.max;
+  }
+
+  const ageRange = { min: 5, max: 110 };
+  const weightRange = { min: 25, max: 200 };
+  const heightRange = { min: 100, max: 220 };
+
+  const isAgeValid = validateRange(formDataInput.age, ageRange);
+  const isWeightValid = validateRange(formDataInput.weight, weightRange);
+  const isHeightValid = validateRange(formDataInput.height, heightRange);
+
+
   return (
     <div className={styles.data}>
       <motion.div
         className={styles.logo}
-        initial={{scale: 0}}
-        animate={{scale: 1}}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
       >
-        <img alt="logo" src={humanImg} className={styles.human}/>
+        <img alt="logo" src={humanImg} className={styles.human} />
       </motion.div>
       <h2 className={styles.title}>{formDataInput.name === "" ? formDataInput.username : formDataInput.name}</h2>
       <div className={styles.userInformation}>
@@ -40,20 +53,20 @@ const Profile = () => {
             <p>Gender</p>
             <div className={styles.radioInputs}>
               <label className={styles.radio}>
-                <input type="radio" name="gender" onChange={(e) => dispatch(handleChange(e))} onClick={() => dispatch(getHumanImg('male'))} value="male"/>
+                <input type="radio" name="gender" onChange={(e) => dispatch(handleChange(e))} onClick={() => dispatch(getHumanImg('male'))} value="male" />
                 <span className={styles.name}>Male</span>
               </label>
               <label className={styles.radio}>
-                <input type="radio" name="gender" onChange={(e) => dispatch(handleChange(e))} onClick={() => dispatch(getHumanImg('female'))} value="female"/>
+                <input type="radio" name="gender" onChange={(e) => dispatch(handleChange(e))} onClick={() => dispatch(getHumanImg('female'))} value="female" />
                 <span className={styles.name}>Female</span>
               </label>
             </div>
           </div>
           <div className={styles.name}>
             <p>Name</p>
-            <input 
+            <input
               className={styles.inputName}
-              type="text" 
+              type="text"
               name="name"
               maxLength={12}
               placeholder="Write your name..."
@@ -64,13 +77,13 @@ const Profile = () => {
           </div>
           <div className={styles.age}>
             <p>Age</p>
-            <input 
-              className={styles.inputNumber} 
-              type="number" 
-              step="1" 
-              min="12" 
-              max="100" 
-              name="age" 
+            <input
+              className={styles.inputNumber}
+              type="number"
+              step="1"
+              min={ageRange.min}
+              max={ageRange.max}
+              name="age"
               placeholder="12 y.o"
               onChange={(e) => dispatch(handleChange(e))}
               value={formDataInput.age}
@@ -79,12 +92,12 @@ const Profile = () => {
           <div className={styles.weight}>
             <p>Weight</p>
             <input
-              className={styles.inputNumber} 
-              type="number" 
-              step="1" 
-              min="35" 
-              max="100" 
-              name="weight" 
+              className={styles.inputNumber}
+              type="number"
+              step="1"
+              min={weightRange.min}
+              max={weightRange.max}
+              name="weight"
               placeholder="35 kg"
               onChange={(e) => dispatch(handleChange(e))}
               value={formDataInput.weight}
@@ -92,13 +105,13 @@ const Profile = () => {
           </div>
           <div className={styles.height}>
             <p>Height</p>
-            <input 
-              className={styles.inputNumber} 
-              type="number" 
-              step="1" 
-              min="140" 
-              max="220" 
-              name="height" 
+            <input
+              className={styles.inputNumber}
+              type="number"
+              step="1"
+              min={heightRange.min}
+              max={heightRange.max}
+              name="height"
               placeholder="140 cm"
               onChange={(e) => dispatch(handleChange(e))}
               value={formDataInput.height}
@@ -121,10 +134,11 @@ const Profile = () => {
           </form>
         </div>
       </div>
-      { isEmpty() && <div className={styles.nextButton}>
+
+      {isEmpty() && isAgeValid && isWeightValid && isHeightValid && <div className={styles.nextButton}>
         <Link to="/main" onClick={() => dispatch(calculateFromData())}>Next</Link>
-      </div> }
-    </div>  
+      </div>}
+    </div>
   )
 }
 
