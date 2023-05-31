@@ -3,21 +3,23 @@ import styles from "./index.module.scss";
 import CircularProgressWithLabel from './ProgressBar/index.jsx';
 import waterImages from "../../../assets/img/main/water-Images.svg";
 import waterStar from "../../../assets/img/main/water-star.svg";
-import {useDispatch, useSelector} from "react-redux";
-import {decNum, handleChange, handleChangeValue, incNum} from "../../../redux/waterCounter/slice";
-import {motion} from "framer-motion";
+import { useDispatch, useSelector } from "react-redux";
+import { handleChangeValue, handleChange, incNum, decNum } from "../../../redux/waterCounter/slice";
+import { motion } from "framer-motion";
+
 
 const Water = () => {
   const dispatch = useDispatch();
   const percentage = useSelector(state => state.dailyIntake.percentages);
   const numFromInput = useSelector(state => state.dailyIntake.numberFromInput);
+
   const waterBalance = useSelector(state => state.humanData.waterBalance);
 
   return (
     <motion.div
-      initial={{opacity: 0}}
-      animate={{opacity: 1}}
-      exit={{opacity: 0}}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <div>
         <div className={styles.waterImages}>
@@ -55,7 +57,13 @@ const Water = () => {
                       type="number"
                       className={styles.inputWater}
                       value={numFromInput}
-                      onChange={(e) => dispatch(handleChange(e.target.value))}
+                      onChange={(e) => {
+                        const inputValue = e.target.value;
+                        const maxLength = 4;
+                        if (inputValue.length <= maxLength && inputValue <= 3000) {
+                          dispatch(handleChange(Math.abs(inputValue)));
+                        }
+                      }}
                     />
                   </div>
                   <div>
