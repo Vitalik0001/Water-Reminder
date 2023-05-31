@@ -210,23 +210,34 @@
 }
 
 .drinkLog {
-  font-size: 18px;
-  font-weight: 500;
   height: 325px;
-  line-height: 27px;
-  color: $darkPurple;
   background: #f7f9fd;
   border-radius: 12px;
-  padding: 24px 24px 24px 24px;
-  text-align: left;
+  padding: 70px 24px 24px 24px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-top: 30px;
   overflow-y: auto;
+  scroll-behavior: smooth;
   &::-webkit-scrollbar {
     width: 0;
   }
+}
+
+.waterTitle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: $darkPurple;
+  margin: -52px 0 0 0;
+  padding: 10px 45px;
+  border-radius: 8px;
+  background-color: rgba(79, 204, 255, 0.4);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  z-index: 10;
 }
 
 .navClause {
@@ -254,5 +265,12 @@
 }
 
 .menuNav a:hover {
-  color: black;
+  color: $black;
+}
+
+.widgetBalance {
+  margin: 12px 0 0 0;
+  color: $white;
+  font-size: 19px;
+  font-weight: 500;
 }

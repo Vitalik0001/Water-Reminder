@@ -30,7 +30,6 @@ const Profile = () => {
         className={styles.logo}
         initial={{scale: 0}}
         animate={{scale: 1}}
-        // exit={{scale: 0.8}}
       >
         <img alt="logo" src={humanImg} className={styles.human}/>
       </motion.div>

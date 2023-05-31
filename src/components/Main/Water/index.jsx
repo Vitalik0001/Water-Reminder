@@ -4,15 +4,13 @@ import CircularProgressWithLabel from './ProgressBar/index.jsx';
 import waterImages from "../../../assets/img/main/water-Images.svg";
 import waterStar from "../../../assets/img/main/water-star.svg";
 import {useDispatch, useSelector} from "react-redux";
-import {handleChangeValue, handleChange, incNum, decNum} from "../../../redux/waterCounter/slice";
+import {decNum, handleChange, handleChangeValue, incNum} from "../../../redux/waterCounter/slice";
 import {motion} from "framer-motion";
-
 
 const Water = () => {
   const dispatch = useDispatch();
   const percentage = useSelector(state => state.dailyIntake.percentages);
   const numFromInput = useSelector(state => state.dailyIntake.numberFromInput);
-
   const waterBalance = useSelector(state => state.humanData.waterBalance);
 
   return (
@@ -55,8 +53,6 @@ const Water = () => {
                   <div>
                     <input
                       type="number"
-                      min={0}
-                      max={3000}
                       className={styles.inputWater}
                       value={numFromInput}
                       onChange={(e) => dispatch(handleChange(e.target.value))}
