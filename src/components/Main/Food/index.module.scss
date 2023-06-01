@@ -187,3 +187,32 @@
   font-size: 30px;
   color: $gray;
 }
+
+@media screen and (max-width: 1024px) {
+  .tipsCalories {
+    width: 635px;
+    margin-left: 5px;
+  }
+  .popupCalories {
+    font-size: 25px;
+  }
+  .foodBurger {
+    margin-top: 95px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tipsCalories {
+    width: 523px;
+    margin-left: -15px;
+  }
+  .calculateCalories {
+    width: 350px;
+    margin-left: -10px;
+  }
+  .foodBurger {
+    width: 200px;
+    margin-left: -30px;
+  }
+}
+

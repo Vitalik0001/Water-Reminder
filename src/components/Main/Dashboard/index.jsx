@@ -52,24 +52,25 @@ const Dashboard = () => {
         <p>Hydration Tips</p>
         <span className={styles.subtitleTip}>Consuming fruit juices keeps up the hydration level.</span>
         <div className={styles.tipsRow}>
-          <Tip
-            numberElement="1"
-            tipName="Watermelon"
-            tipText="It contains 97% water in it. A good choice to stay hydrated."
-            src={watermelon}
-          />
-          <Tip
-            numberElement="2"
-            tipName="Oranges"
-            tipText="It contains 72% water in it. It’s tangy nature helps with skin care."
-            src={oranges}
-          />
-          <Tip
-            numberElement="3"
-            tipName="Grapes"
-            tipText="It contains vitamin ‘C’ which helps with retaining water."
-            src={grapes}
-          />
+            <Tip
+                numberElement="1"
+                tipName="Watermelon"
+                tipText="It contains 97% water in it. A good choice to stay hydrated."
+                src={watermelon}
+              />
+            <Tip
+              numberElement="2"
+              tipName="Oranges"
+              tipText="It contains 72% water in it. It’s tangy nature helps with skin care."
+              src={oranges}
+              />
+              <Tip
+              id="3"
+              numberElement="3"
+              tipName="Grapes"
+              tipText="It contains vitamin ‘C’ which helps with retaining water."
+              src={grapes}
+            />
         </div>
       </div>
     </motion.div>
