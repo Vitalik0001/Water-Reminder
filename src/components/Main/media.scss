@@ -4,8 +4,7 @@
         width: 230px;
     }
     .logo {
-        width: 140px;
-        font-size: 10px;
+        width: 200px;
     }
     .body {
         background: none;
@@ -19,6 +18,11 @@
     }
     .user {
         width: 200px;
+        position: relative;
+        top: -250px;
+    }
+    .drinkLog {
+        margin-top: 50px;
     }
 }
 
@@ -77,7 +81,7 @@
     }
     .user {
         position: relative;
-        top: 270px;
+        top: 30px;
         margin-right: 50px;
     }
     .userMailName{
@@ -172,8 +176,8 @@
         width: 100vw;
         height: 850px;
         backdrop-filter: blur(2px) brightness(0.5);
-        margin-top: -50px;
-        margin-left: 13px;
+        margin-top: 50px;
+        margin-left: 103px;
     }
     .menuBurger {
         width: 100%;
@@ -193,8 +197,8 @@
     }
     .menuContent {
         position: absolute;
-        margin-top: 70px;
-        margin-left: -5px;
+        margin-top: 270px;
+        margin-left: -45px;
         width: 250px;
         height: 880px;
         background-color: white;
