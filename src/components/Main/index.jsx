@@ -100,7 +100,7 @@ const Main = () => {
             <span className={styles.bottlePhrase}>Stay Hydrated and beat heat.</span>
           </div>
           <div className={styles.intakeGoal}>
-            Intake Goal
+            <p>Intake Goal</p>
             {dailyIntake >= 2600
               ? <motion.p
                   initial={{  opacity: 0 }}
