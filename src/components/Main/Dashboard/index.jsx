@@ -14,10 +14,9 @@ import oranges from "../../../assets/img/main/oranges.svg";
 import grapes from "../../../assets/img/main/grapes.svg";
 
 const Dashboard = () => {
-    const averageIntake = useSelector(state => state.dailyIntake.averageIntake);
-    const totalIntake = useSelector(state => state.dailyIntake.sumFromInput);
-
-    const waterBalance = useSelector(state => state.humanData.waterBalance);
+  const averageIntake = useSelector(state => state.dailyIntake.averageIntake);
+  const totalIntake = useSelector(state => state.dailyIntake.sumFromInput);
+  const waterBalance = useSelector(state => state.humanData.waterBalance);
 
   return (
     <motion.div
