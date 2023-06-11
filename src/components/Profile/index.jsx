@@ -1,6 +1,6 @@
 import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { calculateFromData, getHumanImg, handleChange } from "../../redux/humanData/slice";
 import { motion } from "framer-motion";
@@ -36,6 +36,9 @@ const Profile = () => {
   const isWeightValid = validateRange(formDataInput.weight, weightRange);
   const isHeightValid = validateRange(formDataInput.height, heightRange);
 
+  const [activity, setActivity] = useState("");
+  const [gender, setGender] = useState("");
+
 
   return (
     <div className={styles.data}>
@@ -53,11 +56,21 @@ const Profile = () => {
             <p>Gender</p>
             <div className={styles.radioInputs}>
               <label className={styles.radio}>
-                <input type="radio" name="gender" onChange={(e) => dispatch(handleChange(e))} onClick={() => dispatch(getHumanImg('male'))} value="male" />
+                <input type="radio" name="gender"
+                  onChange={(e) => {
+                    dispatch(handleChange(e));
+                    setGender(e.target.value);
+                  }}
+                  onClick={() => dispatch(getHumanImg('male'))} value="male" />
                 <span className={styles.name}>Male</span>
               </label>
               <label className={styles.radio}>
-                <input type="radio" name="gender" onChange={(e) => dispatch(handleChange(e))} onClick={() => dispatch(getHumanImg('female'))} value="female" />
+                <input type="radio" name="gender"
+                  onChange={(e) => {
+                    dispatch(handleChange(e));
+                    setGender(e.target.value);
+                  }}
+                  onClick={() => dispatch(getHumanImg('female'))} value="female" />
                 <span className={styles.name}>Female</span>
               </label>
             </div>
@@ -122,21 +135,46 @@ const Profile = () => {
           <p className={styles.formText}>Activity</p>
           <form className={styles.form}>
             <label htmlFor="01">Minimal</label>
-            <input id="01" type="radio" name="activity" value="minimal" onChange={(e) => dispatch(handleChange(e))} />
+            <input id="01" type="radio" name="activity" value="minimal"
+              onChange={(e) => {
+                dispatch(handleChange(e));
+                setActivity(e.target.value);
+              }} />
             <label htmlFor="02">Low</label>
-            <input id="02" type="radio" name="activity" value="low" onChange={(e) => dispatch(handleChange(e))} />
+            <input id="02" type="radio" name="activity" value="low"
+              onChange={(e) => {
+                dispatch(handleChange(e));
+                setActivity(e.target.value);
+              }} />
             <label htmlFor="03">Average</label>
-            <input id="03" type="radio" name="activity" value="average" onChange={(e) => dispatch(handleChange(e))} />
+            <input id="03" type="radio" name="activity" value="average"
+              onChange={(e) => {
+                dispatch(handleChange(e));
+                setActivity(e.target.value);
+              }} />
             <label htmlFor="04">High</label>
-            <input id="04" type="radio" name="activity" value="high" onChange={(e) => dispatch(handleChange(e))} />
+            <input id="04" type="radio" name="activity" value="high"
+              onChange={(e) => {
+                dispatch(handleChange(e));
+                setActivity(e.target.value);
+              }} />
             <label htmlFor="05">Very high</label>
-            <input id="05" type="radio" name="activity" value="very high" onChange={(e) => dispatch(handleChange(e))} />
+            <input id="05" type="radio" name="activity" value="very high"
+              onChange={(e) => {
+                dispatch(handleChange(e));
+                setActivity(e.target.value);
+              }} />
           </form>
         </div>
       </div>
 
-      {isEmpty() && isAgeValid && isWeightValid && isHeightValid && <div className={styles.nextButton}>
-        <Link to="/main" onClick={() => dispatch(calculateFromData())}>Next</Link>
+      {isEmpty() && isAgeValid && isWeightValid && isHeightValid && activity && gender && <div className={styles.nextButton}>
+        <Link to="/main" onClick={() => {
+          dispatch({ type: 'CLEAR_WATER_COUNTER' });
+          localStorage.clear()
+          dispatch(calculateFromData());
+
+        }}>Next</Link>
       </div>}
     </div>
   )
