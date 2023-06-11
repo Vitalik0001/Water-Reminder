@@ -28,7 +28,7 @@ const Main = () => {
   let counter = 0;
   const [menuActive, setMenuActive] = React.useState(false);
 
-  const waterLogRef = useRef();
+  const waterLogRef = useRef(null);
 
   const newElements = waterLogElement.map(elem => elem);
   useEffect(() => {
