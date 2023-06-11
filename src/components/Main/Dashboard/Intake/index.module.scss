@@ -21,3 +21,14 @@
   display: flex;
   align-items: center;
 }
+
+
+@media screen and (max-width: 1024px) {
+  .intakes {
+    margin: 0 30px 0 30px;
+  }
+  .intakeBody {
+    border-radius: 15px;
+  }
+}
+

@@ -42,3 +42,24 @@
   padding-left: 16px;
   border-left: 1.30286px solid #efeff1;
 }
+
+@media screen and (max-width: 1024px) {
+    .advice {
+        font-size: 13px;
+    } 
+    .container {
+        padding: 0px;
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 700px;
+        margin-left: -50px;
+    }
+    .advice {
+        max-width: 250px;
+    }
+}
+

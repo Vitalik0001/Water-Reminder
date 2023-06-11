@@ -26,6 +26,7 @@ const Main = () => {
   const humanImg = useSelector(state => state.humanData.humanImg);
 
   let counter = 0;
+  const [menuActive, setMenuActive] = React.useState(false);
 
   const waterLogRef = useRef();
 
@@ -47,35 +48,49 @@ const Main = () => {
             </motion.div>
             <p>Water Reminder</p>
           </div>
-          <div className={styles.menu}>
-            <div className={styles.menuWord}>Menu</div>
-            <nav className={styles.menuNav}>
-              <div className={styles.dashboard}>
-                <img alt="dashboard" src={dashboard} />
-                <NavLink to="." className={styles.navClause}>Dashboard</NavLink>
-              </div>
-              <div className={styles.foodCalories}>
-                <img alt="burger" src={burger} />
-                <NavLink to="food" className={styles.navClause}>Food Calories</NavLink>
-              </div>
-              <div className={styles.water}>
-                <img alt="water" src={waterDrop} />
-                <NavLink to="water" className={styles.navClause}>Water</NavLink>
-              </div>
-            </nav>
+          <div className={styles.btnSon} onClick={() => setMenuActive(!menuActive)}>
+            <label className={styles.menuBtn}>
+              <span ></span>
+            </label>
           </div>
-          <div className={styles.user}>
-            <img src={humanImg} className={styles.userImg} alt="user-img"></img>
-            <div>
-              <div className={styles.userMailName}>
-                <p>{formDataInput.name === "" ? formDataInput.username : formDataInput.name}</p>
-                <motion.div
-                  whileHover={{rotate: 70}}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Link to="/profile"><img alt="setting" src={setting} /></Link>
-                </motion.div>
-              </div>
+          <div className={menuActive ? styles.active : styles.menu} onClick={() => setMenuActive(false)}>
+          <div className={styles.menuBurger}>
+            <div className={styles.blur}>
+              <div className={styles.menuContent}>
+                  <div className={styles.menuWord}>Menu</div>
+                  <div className={styles.burgerMenu}>
+                    <nav className={styles.menuNav}>
+                      <div className={styles.dashboard}>
+                        <span />
+                        <img alt="dashboard" src={dashboard} />
+                        <NavLink to="." className={styles.navClause}>Dashboard</NavLink>
+                      </div>
+                      <div className={styles.foodCalories}>
+                        <img alt="burger" src={burger} />
+                        <NavLink to="food" className={styles.navClause}>Food Calories</NavLink>
+                      </div>
+                      <div className={styles.water}>
+                        <img alt="water" src={waterDrop} />
+                        <NavLink to="water" className={styles.navClause}>Water</NavLink>
+                      </div>
+                    </nav>
+                  </div>
+                  <div className={styles.user}>
+                    <img src={humanImg} className={styles.userImg} alt="user-img" />
+                    <div className={styles.userInfo}>
+                      <div className={styles.userMailName}>
+                        <p>{formDataInput.name === "" ? formDataInput.username : formDataInput.name}</p>
+                        <motion.div
+                          whileHover={{rotate: 70}}
+                          transition={{ duration: 0.2 }}
+                        >
+                          <Link to="/profile"><img alt="setting" src={setting} /></Link>
+                        </motion.div>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
@@ -92,7 +107,7 @@ const Main = () => {
         <div className={styles.rightColumn}>
           <div className={styles.currentDay}>
             <img alt="calendar" src={calendar} />
-            <p>{dataForCalendar}</p>
+            <p className={styles.calendarText}>{dataForCalendar}</p>
           </div>
           <div className={styles.bottle}>
             <img src={bottle} alt="bottle" className={styles.bottleImg} />
@@ -100,7 +115,7 @@ const Main = () => {
             <span className={styles.bottlePhrase}>Stay Hydrated and beat heat.</span>
           </div>
           <div className={styles.intakeGoal}>
-            <p>Intake Goal</p>
+            Intake Goal
             {dailyIntake >= 2600
               ? <motion.p
                   initial={{  opacity: 0 }}
@@ -133,3 +148,4 @@ const Main = () => {
 };
 
 export default Main;
+

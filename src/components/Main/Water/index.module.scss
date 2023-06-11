@@ -2,11 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
 .waterDropImage{
   max-width: 200px;
+  display: inline-block;
 }
 
 .imgsWater {
@@ -16,8 +16,8 @@
 
 .waterStarImage{
   position: absolute;
-  left: -15px;
-  top: 70px;
+  left: 330px;
+  top: 160px;
   height: 200px;
   width: 300px;
 }
@@ -197,4 +197,88 @@
   border-radius: 45px;
   width: 130px;
   height: 2rem;
+}
+
+@media screen and (max-width: 1440px) {
+  .waterStarImage {
+    padding-right: 80px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .waterDropImage {
+    width: 250px;
+    height: 200px;
+    margin-left: -130px;
+  }
+  .waterStarImage {
+    position: absolute;
+    margin-left: -180px;
+    width: 300px;
+    height: 150px;
+    z-index: 10;
+  }
+  .calculateWater {
+    width: 300px;
+    height: 200px;
+    margin-top: 20px;
+  }
+  .waterCalculator {
+    margin-left: 10px;
+  }
+  .buttonAdd{
+    display: flex;
+    justify-content: center;
+    width: 55px;
+    height: 37px;
+    margin-top: -1px;
+    margin-left: 15px;
+  }
+  .calculatorGroup {
+    margin-left: -20px;
+  }
+  .tipsWater {
+    width: 590px;
+    height: 400px;
+    margin-left: 60px;
+  }
+  .waterList {
+    font-size: 12px;
+  }
+  .waterImages {
+    margin-left: 150px;
+  }
+  .waterTipsList {
+    height: 270px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .calculateWater {
+    position: relative;
+    top: 10px;
+    left: -140px;
+  }
+  .tipsWater {
+    width: 550px;
+    margin-left: -50px;
+  }
+  .waterList {
+    font-size: 9px;
+    width: 250px;
+    padding: 0px 20px 0px 20px;
+  }
+  .waterDropImage {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    left: 190px;
+    top: 150px;
+    z-index: 10;
+  }
+  .waterStarImage {
+    left: 220px;
+    top: 150px;
+  }
 }

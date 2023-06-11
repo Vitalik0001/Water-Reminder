@@ -7,7 +7,7 @@
 .weather {
   width: 779px;
   height: 100px;
-  background-color: #F7F9FD;
+  background-color: #F7F9FD; // api background
   border-radius: 12px;
   margin-top: 80px;
   margin-bottom: 45px;
@@ -48,5 +48,31 @@
 
 .tipsRow {
   display: flex;
+  justify-content: space-between;
   gap: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .weather {
+    width: 640px;
+    margin-left: 0px
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .tipsBoard {
+    max-width: 550px;
+    margin-left: -50px;
+  }
+  .intakes{
+    max-width: 550px;
+    margin-left: -50px;
+  }
+  .weather {
+    margin-top: 20px;
+    width: 550px;
+    height: 150px;
+    margin-left: -50px;
+  }
 }
