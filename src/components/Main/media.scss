@@ -19,7 +19,6 @@
     .user {
         width: 200px;
         position: relative;
-        top: -250px;
     }
     .drinkLog {
         margin-top: 50px;
@@ -81,7 +80,7 @@
     }
     .user {
         position: relative;
-        top: 30px;
+        top: 300px;
         margin-right: 50px;
     }
     .userMailName{
@@ -176,7 +175,7 @@
         width: 100vw;
         height: 850px;
         backdrop-filter: blur(2px) brightness(0.5);
-        margin-top: 50px;
+        margin-top: -40px;
         margin-left: 103px;
     }
     .menuBurger {
@@ -197,10 +196,10 @@
     }
     .menuContent {
         position: absolute;
-        margin-top: 270px;
+        margin-top: 50px;
         margin-left: -45px;
         width: 250px;
-        height: 880px;
+        height: 900px;
         background-color: white;
         display: flex;
         flex-direction: column;
