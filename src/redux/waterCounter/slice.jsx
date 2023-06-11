@@ -11,6 +11,8 @@ const initialState = {
     waterWidget: [],
 };
 
+
+
 const dailyIntake = createSlice({
     name: 'waterCounter',
     initialState,
@@ -39,6 +41,8 @@ const dailyIntake = createSlice({
                 waterNum: state.numberFromInput,
             }]
         },
+
+
     }
 });
 

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 import _ from "lodash";
 import user from "../../assets/img/profile/user.png";
 import imgData from "../../data";
@@ -34,6 +34,8 @@ const humanData = createSlice({
                 }
             }
             console.log(state.formData)
+
+
         },
         getHumanImg: (state, action) => {
             let humanArray;
@@ -73,9 +75,23 @@ const humanData = createSlice({
             } else if (state.formData.gender === "female") {
                 state.waterBalance = _.round(state.formData.weight * 30);
             }
+
         },
+
     }
 })
 
+const handleInputChange = () => {
+    localStorage.removeItem("reduxState");
+}
+
+const store = configureStore({
+    reducer: {
+        humanData: humanData.reducer,
+
+    },
+})
+
+store.subscribe(handleInputChange)
 export const { handleChange, getHumanImg, calculateFromData } = humanData.actions;
 export default humanData.reducer;
