@@ -2,7 +2,7 @@
   "name": "water-reminder",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vitalik0001.github.io/Water-Reminder",
+  "homepage": "https://vitalik0001.github.io/Water-Reminder/",
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
