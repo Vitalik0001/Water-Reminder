@@ -130,7 +130,7 @@ const Main = () => {
           </div>
           <div className={styles.drinkLog}>
             <div className={styles.waterTitle}>
-              <p>Drink log</p>
+              <p className={styles.drinkTitle}>Drink log</p>
             </div>
             {waterLogElement.map(elem => (
               <motion.div

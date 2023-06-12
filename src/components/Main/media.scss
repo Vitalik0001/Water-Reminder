@@ -22,6 +22,7 @@
     }
     .drinkLog {
         margin-top: 50px;
+        width: 216px;
     }
 }
 
@@ -69,8 +70,18 @@
         font-size: 15px;
     }
     .drinkLog {
-        width: 200px;
-        margin-left: -20px;
+        width: 198px;
+        margin-left: -22px;
+    }
+    .waterTitle {
+        width: 150px;
+        height: 50px;
+    }
+    .drinkTitle {
+        text-align: center;
+        width: 150px;
+        margin-left: -40px;
+        margin-top: 3px;
     }
     .rightColumn {
         margin-left: -40px;
@@ -80,17 +91,15 @@
     }
     .user {
         position: relative;
+        width: 300px;
         top: 300px;
-        margin-right: 50px;
+        margin-left: 40px;
     }
     .userMailName{
         height: 20px;
     }
     .userImg {
         margin-left: 25px;
-    }
-    .waterStarImage{
-        z-index: 10;
     }
     .menuNav {
         margin-left: -100px;

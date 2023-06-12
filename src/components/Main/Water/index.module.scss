@@ -16,8 +16,8 @@
 
 .waterStarImage{
   position: absolute;
-  left: 330px;
-  top: 160px;
+  margin-left: -270px;
+  margin-top: 50px;
   height: 200px;
   width: 300px;
 }
@@ -199,21 +199,17 @@
   height: 2rem;
 }
 
-@media screen and (max-width: 1440px) {
-  .waterStarImage {
-    padding-right: 80px;
-  }
-}
 
 @media screen and (max-width: 1024px) {
   .waterDropImage {
     width: 250px;
     height: 200px;
-    margin-left: -130px;
+    margin-left: -180px;
   }
   .waterStarImage {
     position: absolute;
-    margin-left: -180px;
+    margin-left: -260px;
+    margin-top: 40px;
     width: 300px;
     height: 150px;
     z-index: 10;
@@ -238,18 +234,22 @@
     margin-left: -20px;
   }
   .tipsWater {
-    width: 590px;
+    width: 620px;
     height: 400px;
-    margin-left: 60px;
+    margin-left: 20px;
   }
   .waterList {
-    font-size: 12px;
+    width: 300px;
+    font-size: 11px;
+    margin-left: 1px;
   }
   .waterImages {
     margin-left: 150px;
   }
   .waterTipsList {
     height: 270px;
+    margin-left: -50px;
+    line-height: 20px;
   }
 }
 
