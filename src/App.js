@@ -14,7 +14,7 @@ export default function App() {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path={`${process.env.PUBLIC_URL}/`} element={<Start/>}/>
+        <Route path="/" element={<Start/>}/>
         <Route path={`${process.env.PUBLIC_URL}/profile`} element={<Profile/>}/>
         <Route path={`${process.env.PUBLIC_URL}/main`} element={<Main/>}>
           <Route index element={<Dashboard/>}/>
