@@ -1,262 +1,262 @@
-@media screen and (max-width: 1440px) {
-    .navBody {
-        margin-left: 10px;
-        width: 230px;
-    }
-    .logo {
-        width: 200px;
-    }
-    .body {
-        background: none;
-        overflow-x: hidden;
-    }
-    .wrapper{
-        border-radius: 0%;
-    }
-    .rightColumn {
-        padding: 50px;
-    }
-    .user {
-        width: 200px;
-        position: relative;
-    }
-    .drinkLog {
-        margin-top: 50px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .center {
-        width: 800px;
-        margin-left: 50px;
-    }
-    .centerHeader {
-        margin-left: 70px;
-    }
-    .intakeGoal {
-        width: 200px;
-        height: 120px;
-        padding: 10px;
-        margin-left: -20px;
-    }
-    .waterMl {
-        position: absolute;
-        top: 305px;
-        display: flex;
-        justify-content: center;
-        margin-top: 100px;
-        font-size: none;
-        height: 90px;
-    }
-    .bottleImg {
-        height: 160px;
-        margin-left: -30px;
-        width: 50px;
-        margin-top: 5px;
-    }
-    .bottleImgBg{
-        width: 195px;
-        margin-left: -20px;
-    }
-    .bottlePhrase {
-        margin-top: 10px;
-        font-size: 15px;
-        left: 90px;
-        line-height: 20px;
-        width: 70px;
-    }
-    .calendarText {
-        font-size: 15px;
-    }
-    .drinkLog {
-        width: 200px;
-        margin-left: -20px;
-    }
-    .rightColumn {
-        margin-left: -40px;
-    }
-    .logo {
-        margin-left: 330px;
-    }
-    .user {
-        position: relative;
-        top: 300px;
-        margin-right: 50px;
-    }
-    .userMailName{
-        height: 20px;
-    }
-    .userImg {
-        margin-left: 25px;
-    }
-    .waterStarImage{
-        z-index: 10;
-    }
-    .menuNav {
-        margin-left: -100px;
-        width: 400px;
-    }
-    .menuWord {
-        display: flex;
-        justify-content: center;
-        margin-top: 110px;
-        margin-left: -120px;
-    }
-    .greeting {
-        margin-left: 270px;
-    }
-    #menuToggle {
-        opacity: 0;
-    }
-    #menuToggle:checked ~ .menuBtn > span {
-        transform: rotate(45deg);
-    }
-    #menuToggle:checked ~ .menuBtn > span::before {
-        top: 0;
-        transform: rotate(0);
-    }
-    #menuToggle:checked ~ .menuBtn > span::after {
-        top: 0;
-        transform: rotate(90deg);
-    }
-    #menuToggle:checked ~ .menuNav {
-        visibility: visible;
-        left: 0;
-    }
-    .menuBtn {
-        display: flex;
-        align-items: center;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        width: 26px;
-        height: 26px;
-        cursor: pointer;
-        z-index: 60;
-    }
-    .menuBtn > span,
-    .menuBtn > span::before,
-    .menuBtn > span::after {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: #616161;
-        transition-duration: .25s;
-    }
-    .menuBtn > span::before {
-        content: '';
-        top: -8px;
-    }
-    .menuBtn > span::after {
-        content: '';
-        top: 8px;
-    }
-    .burgerMenu {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 25px;
-        height: 20px;
-        cursor: pointer;
-    }
-    .menu {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        top: 58px;
-        left: 0;
-        display: none;
-    }
-    .active{
-        position: absolute;
-        transform: translateX(200px);
-        z-index: 50;
-        width: 100vw;
-        height: 850px;
-        backdrop-filter: blur(2px) brightness(0.5);
-        margin-top: -40px;
-        margin-left: 103px;
-    }
-    .menuBurger {
-        width: 100%;
-        height: 500px;
-        backdrop-filter: blur(2px);
-        position: absolute;
-        margin-top: -100px;
-    } 
-    .blur {
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        backdrop-filter: blur(2px);
-    }
-    .navBody {
-        margin-left: -230px;
-    }
-    .menuContent {
-        position: absolute;
-        margin-top: 50px;
-        margin-left: -45px;
-        width: 250px;
-        height: 900px;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 1;
-    }
-}
-
-
-@media screen and (max-width: 768px) {
-    .rightColumn {
-        margin-left: -200px;
-    }
-    .greeting {
-        width: 300px;
-        margin-left: 140px;
-    }
-    .logo {
-        display: none;
-    }
-    .bottleImgBg{
-        height: 140px;
-        width: 270px;
-        margin-left: -60px;
-    }
-    .bottleImg {
-        height: 150px;
-        margin-left: -50px;
-        width: 50px;
-        margin-top: -10px;
-    }
-    .bottlePhrase {
-        font-size: 15px;
-        left: 60px;
-        line-height: 20px;
-        width: 70px;
-    }
-    .intakeGoal {
-        width: 160px;
-        margin-left: -32px;
-    }
-    .waterMl {
-        top: 270px;
-    }
-    .currentDay {
-        position: relative;
-        left: -28px;
-    }
-    .drinkLog {
-        position: relative;
-        left: -10px;
-    }
-    .menuNav {
-        margin-left: -80px;
-    }
-    .user {
-        margin-left: 50px;
-    }
-}
-
+//@media screen and (max-width: 1440px) {
+//    .navBody {
+//        margin-left: 10px;
+//        width: 230px;
+//    }
+//    .logo {
+//        width: 200px;
+//    }
+//    .body {
+//        background: none;
+//        overflow-x: hidden;
+//    }
+//    .wrapper{
+//        border-radius: 0%;
+//    }
+//    .rightColumn {
+//        padding: 50px;
+//    }
+//    .user {
+//        width: 200px;
+//        position: relative;
+//    }
+//    .drinkLog {
+//        margin-top: 50px;
+//    }
+//}
+//
+//@media screen and (max-width: 1024px) {
+//    .center {
+//        width: 800px;
+//        margin-left: 50px;
+//    }
+//    .centerHeader {
+//        margin-left: 70px;
+//    }
+//    .intakeGoal {
+//        width: 200px;
+//        height: 120px;
+//        padding: 10px;
+//        margin-left: -20px;
+//    }
+//    .waterMl {
+//        position: absolute;
+//        top: 305px;
+//        display: flex;
+//        justify-content: center;
+//        margin-top: 100px;
+//        font-size: none;
+//        height: 90px;
+//    }
+//    .bottleImg {
+//        height: 160px;
+//        margin-left: -30px;
+//        width: 50px;
+//        margin-top: 5px;
+//    }
+//    .bottleImgBg{
+//        width: 195px;
+//        margin-left: -20px;
+//    }
+//    .bottlePhrase {
+//        margin-top: 10px;
+//        font-size: 15px;
+//        left: 90px;
+//        line-height: 20px;
+//        width: 70px;
+//    }
+//    .calendarText {
+//        font-size: 15px;
+//    }
+//    .drinkLog {
+//        width: 200px;
+//        margin-left: -20px;
+//    }
+//    .rightColumn {
+//        margin-left: -40px;
+//    }
+//    .logo {
+//        margin-left: 330px;
+//    }
+//    .user {
+//        position: relative;
+//        top: 300px;
+//        margin-right: 50px;
+//    }
+//    .userMailName{
+//        height: 20px;
+//    }
+//    .userImg {
+//        margin-left: 25px;
+//    }
+//    .waterStarImage{
+//        z-index: 10;
+//    }
+//    .menuNav {
+//        margin-left: -100px;
+//        width: 400px;
+//    }
+//    .menuWord {
+//        display: flex;
+//        justify-content: center;
+//        margin-top: 110px;
+//        margin-left: -120px;
+//    }
+//    .greeting {
+//        margin-left: 270px;
+//    }
+//    #menuToggle {
+//        opacity: 0;
+//    }
+//    #menuToggle:checked ~ .menuBtn > span {
+//        transform: rotate(45deg);
+//    }
+//    #menuToggle:checked ~ .menuBtn > span::before {
+//        top: 0;
+//        transform: rotate(0);
+//    }
+//    #menuToggle:checked ~ .menuBtn > span::after {
+//        top: 0;
+//        transform: rotate(90deg);
+//    }
+//    #menuToggle:checked ~ .menuNav {
+//        visibility: visible;
+//        left: 0;
+//    }
+//    .menuBtn {
+//        display: flex;
+//        align-items: center;
+//        position: fixed;
+//        top: 20px;
+//        left: 20px;
+//        width: 26px;
+//        height: 26px;
+//        cursor: pointer;
+//        z-index: 60;
+//    }
+//    .menuBtn > span,
+//    .menuBtn > span::before,
+//    .menuBtn > span::after {
+//        display: block;
+//        position: absolute;
+//        width: 100%;
+//        height: 2px;
+//        background-color: #616161;
+//        transition-duration: .25s;
+//    }
+//    .menuBtn > span::before {
+//        content: '';
+//        top: -8px;
+//    }
+//    .menuBtn > span::after {
+//        content: '';
+//        top: 8px;
+//    }
+//    .burgerMenu {
+//        display: flex;
+//        flex-direction: column;
+//        justify-content: space-between;
+//        width: 25px;
+//        height: 20px;
+//        cursor: pointer;
+//    }
+//    .menu {
+//        position: fixed;
+//        width: 100vw;
+//        height: 100vh;
+//        top: 58px;
+//        left: 0;
+//        display: none;
+//    }
+//    .active{
+//        position: absolute;
+//        transform: translateX(200px);
+//        z-index: 50;
+//        width: 100vw;
+//        height: 850px;
+//        backdrop-filter: blur(2px) brightness(0.5);
+//        margin-top: -40px;
+//        margin-left: 103px;
+//    }
+//    .menuBurger {
+//        width: 100%;
+//        height: 500px;
+//        backdrop-filter: blur(2px);
+//        position: absolute;
+//        margin-top: -100px;
+//    }
+//    .blur {
+//        width: 100%;
+//        height: 100vh;
+//        position: absolute;
+//        backdrop-filter: blur(2px);
+//    }
+//    .navBody {
+//        margin-left: -230px;
+//    }
+//    .menuContent {
+//        position: absolute;
+//        margin-top: 50px;
+//        margin-left: -45px;
+//        width: 250px;
+//        height: 900px;
+//        background-color: white;
+//        display: flex;
+//        flex-direction: column;
+//        align-items: center;
+//        z-index: 1;
+//    }
+//}
+//
+//
+//@media screen and (max-width: 768px) {
+//    .rightColumn {
+//        margin-left: -200px;
+//    }
+//    .greeting {
+//        width: 300px;
+//        margin-left: 140px;
+//    }
+//    .logo {
+//        display: none;
+//    }
+//    .bottleImgBg{
+//        height: 140px;
+//        width: 270px;
+//        margin-left: -60px;
+//    }
+//    .bottleImg {
+//        height: 150px;
+//        margin-left: -50px;
+//        width: 50px;
+//        margin-top: -10px;
+//    }
+//    .bottlePhrase {
+//        font-size: 15px;
+//        left: 60px;
+//        line-height: 20px;
+//        width: 70px;
+//    }
+//    .intakeGoal {
+//        width: 160px;
+//        margin-left: -32px;
+//    }
+//    .waterMl {
+//        top: 270px;
+//    }
+//    .currentDay {
+//        position: relative;
+//        left: -28px;
+//    }
+//    .drinkLog {
+//        position: relative;
+//        left: -10px;
+//    }
+//    .menuNav {
+//        margin-left: -80px;
+//    }
+//    .user {
+//        margin-left: 50px;
+//    }
+//}
+//

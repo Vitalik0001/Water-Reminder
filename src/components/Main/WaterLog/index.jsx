@@ -12,7 +12,7 @@ const WaterLog = ({ waterAmount, time }) => {
         />
         <div className={styles.waterAmount}>{waterAmount} ml</div>
       </div>
-      <div className={styles.rightHalf}>
+      <div>
         <div className={styles.time}> {time}</div>
       </div>
     </div>
