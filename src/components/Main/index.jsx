@@ -48,11 +48,17 @@ const Main = () => {
             </motion.div>
             <p>Water Reminder</p>
           </div>
-          <div className={styles.btnSon} onClick={() => setMenuActive(!menuActive)}>
+          <motion.div
+            initial={{  opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className={styles.btnSon}
+            onClick={() => setMenuActive(!menuActive)}
+          >
             <label className={styles.menuBtn}>
               <span ></span>
             </label>
-          </div>
+          </motion.div>
           <div className={menuActive ? styles.active : styles.menu} onClick={() => setMenuActive(false)}>
           <div className={styles.menuBurger}>
             <div className={styles.blur}>
@@ -116,7 +122,7 @@ const Main = () => {
           </div>
           <div className={styles.intakeGoal}>
             Intake Goal
-            {dailyIntake >= 2600
+            {dailyIntake >= calculateWater
               ? <motion.p
                   initial={{  opacity: 0 }}
                   animate={{ opacity: 1 }}
