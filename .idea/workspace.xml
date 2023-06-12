@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c76165d8-d652-459d-8883-0b4efde6f8e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="vitalik/task/1-create-profile-page" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2PtDpUmFYU9KmaEyr49sOv1Ps09" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Frontend/Alina/WaterReminder/water-reminder&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactBuddySettings">
+    <option name="extensionsIgnore" value="true" />
+  </component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c76165d8-d652-459d-8883-0b4efde6f8e6" name="Changes" comment="" />
+      <created>1684267667434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684267667434</updated>
+      <workItem from="1684267669065" duration="296000" />
+      <workItem from="1684313093554" duration="310000" />
+      <workItem from="1684313423358" duration="1270000" />
+      <workItem from="1684315293577" duration="40000" />
+      <workItem from="1684315351583" duration="548000" />
+      <workItem from="1684315920455" duration="857000" />
+      <workItem from="1684316807696" duration="1808000" />
+      <workItem from="1684318674693" duration="5697000" />
+      <workItem from="1684326628867" duration="178000" />
+      <workItem from="1684326823092" duration="57000" />
+      <workItem from="1684326895033" duration="12625000" />
+      <workItem from="1684415892030" duration="8000" />
+      <workItem from="1684416008543" duration="246000" />
+      <workItem from="1684429892652" duration="333000" />
+      <workItem from="1684516232461" duration="326000" />
+      <workItem from="1684516641350" duration="602000" />
+      <workItem from="1684517788777" duration="8160000" />
+      <workItem from="1684571636131" duration="1235000" />
+      <workItem from="1684586286017" duration="511000" />
+      <workItem from="1684594716180" duration="13378000" />
+      <workItem from="1684659473152" duration="3000" />
+      <workItem from="1684690752510" duration="537000" />
+      <workItem from="1684774931368" duration="7919000" />
+      <workItem from="1684862290705" duration="7710000" />
+      <workItem from="1684874628788" duration="576000" />
+      <workItem from="1684916152693" duration="7211000" />
+      <workItem from="1685171566687" duration="626000" />
+      <workItem from="1685174077832" duration="841000" />
+      <workItem from="1685174949395" duration="36000" />
+      <workItem from="1685175002692" duration="16882000" />
+      <workItem from="1685209125698" duration="9649000" />
+      <workItem from="1685259345695" duration="430000" />
+      <workItem from="1685299795369" duration="193000" />
+      <workItem from="1685300604891" duration="380000" />
+      <workItem from="1685380139883" duration="565000" />
+      <workItem from="1685389788712" duration="230000" />
+      <workItem from="1685390023704" duration="426000" />
+      <workItem from="1685464110830" duration="603000" />
+      <workItem from="1685464834030" duration="9411000" />
+      <workItem from="1685545153762" duration="9285000" />
+      <workItem from="1685561675870" duration="1272000" />
+      <workItem from="1685646387597" duration="1798000" />
+      <workItem from="1685724858073" duration="391000" />
+      <workItem from="1685725309825" duration="2846000" />
+      <workItem from="1685729395986" duration="752000" />
+      <workItem from="1686326447358" duration="466000" />
+      <workItem from="1686423221837" duration="394000" />
+      <workItem from="1686423646268" duration="139000" />
+      <workItem from="1686483915477" duration="697000" />
+      <workItem from="1686507804042" duration="595000" />
+      <workItem from="1686512922804" duration="3684000" />
+      <workItem from="1686575528391" duration="1850000" />
+      <workItem from="1686577405645" duration="586000" />
+      <workItem from="1686578032730" duration="321000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

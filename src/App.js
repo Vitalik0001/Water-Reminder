@@ -14,13 +14,14 @@ export default function App() {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Start />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="main" element={<Main />}>
-          <Route index element={<Dashboard />} />
-          <Route path="food" element={<Food />} />
-          <Route path="water" element={<Water />} />
+        <Route path="/" element={<Start/>}/>
+        <Route path="profile" element={<Profile/>}/>
+        <Route path="main" element={<Main/>}>
+          <Route index element={<Dashboard/>}/>
+          <Route path="food" element={<Food/>}/>
+          <Route path="water" element={<Water/>}/>
         </Route>
       </Routes>
     </AnimatePresence>
   )
+}
