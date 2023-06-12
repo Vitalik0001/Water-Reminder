@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Water-Reminder/static/css/main.20d2d4ab.css",
-    "main.js": "/Water-Reminder/static/js/main.4bc7d647.js",
+    "main.js": "/Water-Reminder/static/js/main.fa3c803a.js",
     "static/media/grapes.svg": "/Water-Reminder/static/media/grapes.03b9ddf949586b9c2b804ac1b3e45ae3.svg",
     "static/media/watermelon.svg": "/Water-Reminder/static/media/watermelon.ad42df859d6c98b5ce66bc4709df6ab3.svg",
     "static/media/oranges.svg": "/Water-Reminder/static/media/oranges.bb1d5f36453afa3beb4e123f3cf77e69.svg",
@@ -37,10 +37,10 @@
     "static/media/daily-intake-2.svg": "/Water-Reminder/static/media/daily-intake-2.51512187971d8f3b9661a1e2d3ec4ee9.svg",
     "static/media/daily-intake-3.svg": "/Water-Reminder/static/media/daily-intake-3.60c03828a3017bb5d36f4b7bd3b7446a.svg",
     "main.20d2d4ab.css.map": "/Water-Reminder/static/css/main.20d2d4ab.css.map",
-    "main.4bc7d647.js.map": "/Water-Reminder/static/js/main.4bc7d647.js.map"
+    "main.fa3c803a.js.map": "/Water-Reminder/static/js/main.fa3c803a.js.map"
   },
   "entrypoints": [
     "static/css/main.20d2d4ab.css",
-    "static/js/main.4bc7d647.js"
+    "static/js/main.fa3c803a.js"
   ]
 }
