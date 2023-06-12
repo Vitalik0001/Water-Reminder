@@ -1,0 +1,34 @@
+.intakeBody {
+  width: 244px;
+  padding: 20px;
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+}
+
+.name {
+  font-family: "Poppins";
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.amount {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 18.3214px;
+  line-height: 27px;
+  display: flex;
+  align-items: center;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .intakes {
+    margin: 0 30px 0 30px;
+  }
+  .intakeBody {
+    border-radius: 15px;
+  }
+}
+

@@ -1,0 +1,284 @@
+.waterImages{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.waterDropImage{
+  max-width: 200px;
+  display: inline-block;
+}
+
+.imgsWater {
+  margin-top: 50px;
+  padding-left: 50px;
+}
+
+.waterStarImage{
+  position: absolute;
+  margin-left: -270px;
+  margin-top: 50px;
+  height: 200px;
+  width: 300px;
+}
+
+.waterTitle {
+  font-weight: 400;
+  & span {
+    font-weight: 700;
+  } 
+}
+
+.waterSubtitle {
+  max-width: 300px;
+  font-size: 10px;
+  margin-left: 10px;
+  & span {
+    font-weight: 600;
+  } 
+}
+
+.inputWater {
+  max-width: 50px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  outline: none;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.inputWater:focus {
+  border-bottom: 1px solid #01ddff;
+  -webkit-transition: 0.1s;
+  transition: 0.5s;
+}
+
+.buttonPlus, .buttonMinus, .buttonAdd {
+  max-height: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid rgb(209,213,219);
+  border-radius: .5rem;
+  color: #111827;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  vertical-align: middle;
+  padding: 7px 20px 10px 20px;
+  text-align: center;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+.buttonPlus:hover, .buttonMinus:hover, .buttonAdd:hover {
+  background-color: #f9fafb;
+}
+
+.buttonPlus:focus-visible, .buttonMinus:focus-visible, .buttonAdd:focus-visible {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.waterCalculator {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.tipsWater {
+  width: 780px;
+  background-color: white;
+  border: 1px solid #f2eeee;
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+  color: darkGray;
+  padding: 24px;
+  margin-top: 25px;
+  & p {
+    color: black;
+  }
+}
+
+.childrenTips {
+  max-height: 210px;
+  display: flex;
+  gap: 75px;
+  margin: 20px 50px;
+}
+
+.waterList {
+  font-size: 14px;
+  color: rgb(127, 127, 127);
+  padding-left: 35px;
+  list-style-type: circle;
+  & li {
+    line-height: 25px;
+    margin-bottom: 15px;
+  }
+  & li:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+.waterTipsList {
+  border-left: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitleTip {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  color: black;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.calculateWater {
+  width: 400px;
+  height: 200px;
+  background-color: white;
+  color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0px 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0px 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  border: 1px solid #f2eeee;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.calculatorGroup {
+  display: flex;
+  gap: 20px;
+}
+
+.buttonsClick {
+  display: flex;
+  margin-top: 25px;
+}
+
+.formControl{
+  padding: 6px;
+  background: #d1d5db;
+  border: none;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 75px;
+}
+
+.WaterStyle{
+  display: flex;
+  border: 1px solid #d1d5db;
+  border-radius: 45px;
+  width: 130px;
+  height: 2rem;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .waterDropImage {
+    width: 250px;
+    height: 200px;
+    margin-left: -180px;
+  }
+  .waterStarImage {
+    position: absolute;
+    margin-left: -260px;
+    margin-top: 40px;
+    width: 300px;
+    height: 150px;
+    z-index: 10;
+  }
+  .calculateWater {
+    width: 300px;
+    height: 200px;
+    margin-top: 20px;
+  }
+  .waterCalculator {
+    margin-left: 10px;
+  }
+  .buttonAdd{
+    display: flex;
+    justify-content: center;
+    width: 55px;
+    height: 37px;
+    margin-top: -1px;
+    margin-left: 15px;
+  }
+  .calculatorGroup {
+    margin-left: -20px;
+  }
+  .tipsWater {
+    width: 620px;
+    height: 400px;
+    margin-left: 20px;
+  }
+  .waterList {
+    width: 300px;
+    font-size: 11px;
+    margin-left: 1px;
+  }
+  .waterImages {
+    margin-left: 150px;
+  }
+  .waterTipsList {
+    height: 270px;
+    margin-left: -50px;
+    line-height: 20px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .calculateWater {
+    position: relative;
+    top: 10px;
+    left: -140px;
+  }
+  .tipsWater {
+    width: 550px;
+    margin-left: -50px;
+  }
+  .waterList {
+    font-size: 9px;
+    width: 250px;
+    padding: 0px 20px 0px 20px;
+  }
+  .waterDropImage {
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    left: 190px;
+    top: 150px;
+    z-index: 10;
+  }
+  .waterStarImage {
+    left: 220px;
+    top: 150px;
+  }
+}

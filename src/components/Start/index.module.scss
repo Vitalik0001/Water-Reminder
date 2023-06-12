@@ -1,0 +1,41 @@
+@import "../../assets/styles/main.scss";
+
+.content {
+  background-color: $red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.title {
+  font-family: 'Pacifico', sans-serif;
+  font-size: 100px;
+  color: $white;
+  margin-bottom: 50px;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;  
+  -moz-user-select: none;      
+  -ms-user-select: none;       
+  user-select: none;  
+}
+
+.buttonStart {
+  padding: 15px 40px;
+  font-size: 20px;
+  border-radius: 30px;
+  background: $white;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transform: translate(1) translate(0, 0);
+  transition: transform 225ms, box-shadow 225ms;
+  &:hover {
+    transform: scale(1.05) translate(0, -0.15rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+  }
+  &:active {
+    transform: scale(1) translate(0, 0.15rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+}

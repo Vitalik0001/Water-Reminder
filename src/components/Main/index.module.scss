@@ -1,0 +1,276 @@
+@import "../../assets/styles/main.scss";
+@import "./media.scss";
+
+.body {
+  background-color: #f2ecdb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  height: 820px;
+  margin: 0 auto;
+  background: $white;
+  box-shadow: 60px 70px 80px rgba(28, 31, 46, 0.1);
+  border-radius: 24px;
+  display: flex;
+}
+
+.navBody {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  max-width: 300px;
+  padding: 40px;
+  height: 100%;
+  border-right: 1px solid #efecec;
+  background-color: $white;
+  border-radius: 24px 0 0 24px;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: #1573ff;
+  line-height: 25px;
+  font-size: 20px;
+  margin-bottom: 100px;
+  & img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.foodCalories {
+  display: flex;
+  align-items: center;
+  & img {
+    width: 25px;
+    margin-left: 15px;
+    margin-right: 20px;
+  }
+}
+
+.water {
+  display: flex;
+  align-items: center;
+  & img {
+    width: 25px;
+    margin-left: 15px;
+    margin-right: 20px;
+  }
+}
+
+.menuNav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-size: 14px;
+  line-height: 21px;
+  color: $gray;
+}
+
+.menu {
+  user-select: none;
+}
+
+.menuWord {
+  font-size: 25px;
+  line-height: 21px;
+  margin-bottom: 40px;
+  color: $darkPurple;
+}
+
+.dashboard {
+  display: flex;
+  align-items: center;
+  & img {
+    width: 25px;
+    margin-left: 15px;
+    margin-right: 20px;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  color: $darkGray;
+  gap: 8px;
+  margin-top: 350px;
+}
+
+.userImg {
+  width: 38px;
+  border-radius: 50%;
+}
+
+.userMailName {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 16px;
+  margin-left: 10px;
+  & img {
+    width: 25px;
+    padding-top: 6px;
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 80px;
+}
+
+.greeting {
+  color: $darkPurple;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.centerHeader {
+  display: inline-block;
+}
+
+.userName {
+  font-weight: 700;
+}
+
+.rightColumn {
+  flex: 1;
+  border-left: 1px solid $veryLightGray;
+  height: 100%;
+  max-width: 350px;
+  padding: 40px;
+}
+
+.currentDay {
+  font-size: 18px;
+  line-height: 28px;
+  text-align: left;
+  color: $darkPurple;
+  margin: 0 auto 40px auto;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  max-width: 195px;
+}
+
+.bottle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  line-height: 30px;
+  color: $white;
+  margin-bottom: 20px;
+}
+
+.bottleImgBg {
+  max-width: 220px;
+}
+
+.bottleImg {
+  position: absolute;
+  max-height: 185px;
+  top: -20px;
+  left: 50px;
+}
+
+.bottlePhrase {
+  max-width: 93px;
+  position: absolute;
+  right: 5px;
+  top: 30px;
+}
+
+.intakeGoal {
+  background: url("../../assets/img/main/intake-goal.svg") no-repeat;
+  background-size: contain;
+  max-width: 260px;
+  padding: 24px;
+  color: #f2f4f7;
+}
+
+.waterMl {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.drinkLog {
+  height: 325px;
+  background: #f7f9fd;
+  border-radius: 12px;
+  padding: 70px 24px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 30px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.waterTitle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: $darkPurple;
+  margin: -52px 0 0 0;
+  padding: 10px 45px;
+  border-radius: 8px;
+  background-color: rgba(79, 204, 255, 0.4);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  position: absolute;
+  z-index: 10;
+}
+
+.navClause {
+  display: inline-block;
+  position: relative;
+}
+
+.navClause::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #66c8fc;
+  transform-origin: bottom right;
+  transition: transform 0.35s ease-out;
+}
+
+.navClause:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  border-radius: 3px;
+}
+
+.menuNav a:hover {
+  color: $black;
+}
+
+.widgetBalance {
+  margin: 12px 0 0 0;
+  color: $white;
+  font-size: 19px;
+  font-weight: 500;
+}

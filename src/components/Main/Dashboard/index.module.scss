@@ -1,0 +1,78 @@
+@import "../../../assets/styles/main.scss";
+
+.currentChosenMenuLink {
+  width: 100%;
+}
+
+.weather {
+  width: 779px;
+  height: 100px;
+  background-color: #F7F9FD; // api background
+  border-radius: 12px;
+  margin-top: 80px;
+  margin-bottom: 45px;
+}
+
+.intakes {
+  display: flex;
+  gap: 24px;
+}
+
+.tipsBoard {
+  max-width: 779px;
+  background-color: $white;
+  border: 1px solid #f2eeee;
+  box-shadow: 30px 30.24px 20px rgba(0, 0, 0, 0.02),
+    0 12.16px 8.576px rgba(0, 0, 0, 0.013152),
+    0 2.72px 3.712px rgba(0, 0, 0, 0.008304);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  display: flex;
+  flex-direction: column;
+  color: $darkGray;
+  padding: 24px;
+}
+
+.subtitleTip {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  color: #8e8f8f;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.tipsRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+  .weather {
+    width: 640px;
+    margin-left: 0px
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .tipsBoard {
+    max-width: 550px;
+    margin-left: -50px;
+  }
+  .intakes{
+    max-width: 550px;
+    margin-left: -50px;
+  }
+  .weather {
+    margin-top: 20px;
+    width: 550px;
+    height: 150px;
+    margin-left: -50px;
+  }
+}
